@@ -14,7 +14,7 @@ export function Footer() {
             About
           </Link>
           <Link to="/hotlines" className="hover:text-foreground">
-            Hotline bling
+            Hotline
           </Link>
           <a href={`mailto:${site.email}`} className="hover:text-foreground">
             {site.email}
