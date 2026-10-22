@@ -16,6 +16,7 @@ export const site = {
   nav: [
     { label: "Services", to: "/", hash: "services" },
     { label: "Hotlines", to: "/hotlines" },
+    { label: "Officials", to: "/officials" },
     { label: "Statistics", to: "/statistics" },
     { label: "Announcements", to: "/", hash: "announcements" },
     { label: "About", to: "/about" },
