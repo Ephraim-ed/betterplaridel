@@ -2,6 +2,9 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* The site is light-only: "dark:" styles apply only under a .dark class, never from the OS setting. */
+@custom-variant dark (&:is(.dark *));
+
 /* Theme tokens — change these to restyle the whole template. */
 :root {
   --surface: #f8fafc;
@@ -104,9 +107,6 @@ html {
 }
 
 @layer components {
-  .input {
-    @apply rounded-lg border border-line bg-background px-3 py-2 font-normal outline-none focus:border-brand focus:ring-2 focus:ring-brand/30;
-  }
   .prose-section {
     @apply mx-auto max-w-2xl pb-8 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-bold [&_p]:mt-4 [&_p]:text-muted-foreground;
   }

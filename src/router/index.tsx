@@ -1,11 +1,11 @@
 import { createRouter, RouterProvider } from "@tanstack/react-router";
-import { rootRoute } from "./routes/root";
+import { rootRoute } from "./root";
 import { homeRoute } from "./routes/home";
 import { aboutRoute } from "./routes/about";
-import { contactRoute } from "./routes/contact";
-import { NotFound } from "./routes/not-found";
+import { hotlinesRoute, contactRedirectRoute } from "./routes/hotlines";
+import { NotFound } from "./not-found";
 
-const routeTree = rootRoute.addChildren([homeRoute, aboutRoute, contactRoute]);
+const routeTree = rootRoute.addChildren([homeRoute, aboutRoute, hotlinesRoute, contactRedirectRoute]);
 
 export const router = createRouter({
   routeTree,
