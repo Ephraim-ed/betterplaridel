@@ -1,0 +1,115 @@
+// Emergency numbers are from the Municipality of Plaridel's official list.
+// TODO: verify — add the remaining official numbers. "TBA" entries are not callable.
+export const officialEmail = "plaridelbulacanofficial@gmail.com";
+
+// Full list of national hotlines, linked under the agencies group.
+export const moreHotlinesUrl = "https://bettergov.ph/philippines/hotlines";
+
+export const hotlineGroups = [
+  {
+    id: "emergency",
+    title: "Emergency",
+    description: "Police, fire, rescue and medical help.",
+    contacts: [
+      { name: "National Emergency Hotline", number: "911", note: "Police, fire and medical emergencies" },
+      { name: "Plaridel Rescue", number: "09610819333", note: "Rescue and disaster response" },
+      { name: "Plaridel Police Station", number: "09985985392", note: "PNP" },
+      {
+        name: "Plaridel Fire Station",
+        number: "09762502143",
+        note: "BFP",
+        otherNumbers: ["09628797434", "0448125805"],
+      },
+      { name: "Municipal Health Office", number: "09236188664", note: "Medical concerns" },
+    ],
+  },
+  {
+    id: "barangays",
+    title: "Barangays",
+    description: "Barangay halls for clearances and local concerns.",
+    // TODO: verify — barangay list and numbers.
+    contacts: [
+      "Agnaya", "Bagong Silang", "Banga I", "Banga II", "Bintog", "Bulihan", "Culianin",
+      "Dampol", "Lagundi", "Lalangan", "Lumang Bayan", "Parulan", "Poblacion", "Rueda",
+      "San Jose", "Santa Ines", "Santo Niño", "Sipat", "Tabang",
+    ].map((b) => ({ name: `Barangay ${b}`, number: "TBA", note: "Barangay hall" })),
+  },
+  {
+    id: "utilities",
+    title: "Utilities",
+    description: "Power and water.",
+    contacts: [
+      { name: "Meralco", number: "(02) 16211", note: "Power outages and billing" },
+      { name: "Plaridel Water District", number: "(044) 795 0102", note: "PLAWD — water service, leaks and billing" },
+    ],
+  },
+  {
+    id: "telecom",
+    title: "Internet & Telecom",
+    description: "Repair and support lines for phone and internet providers.",
+    // Use { number, label } for numbers that only work from one network.
+    contacts: [
+      { name: "PLDT Plaridel", number: "09105557707", note: "Landline and fiber repair" },
+      { name: "Converge Plaridel", number: "(02) 8667 0850", note: "Fiber internet repair" },
+      {
+        name: "Starlink",
+        number: { number: "+63 1800 8 918 0140", label: "From Globe" },
+        otherNumbers: [{ number: "+63 1800 8 918 0150", label: "From PLDT / Smart" }],
+        note: "Satellite internet — toll-free",
+      },
+      {
+        name: "Globe",
+        number: { number: "211", label: "Free from Globe mobile" },
+        otherNumbers: [
+          { number: "808", label: "Free from TM" },
+          { number: "(02) 7730 1000", label: "Free from landline" },
+        ],
+        note: "Globe, TM and Globe At Home",
+      },
+      {
+        name: "Smart",
+        number: { number: "*888", label: "Free from Smart SIM" },
+        otherNumbers: [{ number: "(02) 8888 1111", label: "Any phone" }],
+        note: "Mobile, Smart Bro and pocket WiFi",
+      },
+      {
+        name: "DITO",
+        number: { number: "186", label: "From DITO number" },
+        note: "Mobile network · Daily, 6 AM – 12 MN",
+      },
+    ],
+  },
+  {
+    id: "agencies",
+    title: "Provincial & National Agencies",
+    description: "Offices outside the municipality.",
+    contacts: [
+      { name: "Citizens' Complaint Hotline", number: "8888", note: "Complaints about government services" },
+      {
+        name: "Bulacan Provincial Capitol",
+        number: { number: "(044) 791 8148", label: "Requests and concerns" },
+        otherNumbers: [{ number: "(044) 791 8150", label: "Medical assistance" }],
+        note: "Office of the Governor",
+      },
+      { name: "DSWD", number: "TBA", note: "Social welfare" },
+      {
+        name: "PhilHealth",
+        number: "(044) 796 1559",
+        otherNumbers: [{ number: "(044) 796 1560", label: "Local 4400", dial: "0447961560,4400" }],
+        note: "PRO III-B — Malolos",
+      },
+      {
+        name: "SSS",
+        number: { number: "(044) 766 1162", label: "Baliuag branch" },
+        otherNumbers: [{ number: "(044) 662 5426", label: "Malolos branch" }],
+        note: "Social security",
+      },
+      { name: "Pag-IBIG Fund", number: "(044) 794 2166", note: "Housing and savings" },
+      {
+        name: "LTO Malolos District Office",
+        number: "(044) 795 5559",
+        note: "Tabang, Guiguinto · Mon–Fri, 8 AM – 5 PM",
+      },
+    ],
+  },
+] as const;

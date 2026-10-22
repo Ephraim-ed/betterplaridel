@@ -3,10 +3,9 @@ import { AnimateIcon } from "@animate-ui/react/icons";
 import { ArrowRight } from "@/components/animate-ui/icons/arrow-right";
 import { PhoneCall } from "@/components/animate-ui/icons/phone-call";
 import { Button } from "@/components/ui/button";
-import { site } from "@/site.config";
+import { hero } from "../data";
 
 export function Hero() {
-  const { hero } = site;
   return (
     <section className="relative isolate overflow-hidden">
       <div
@@ -32,7 +31,7 @@ export function Hero() {
           </AnimateIcon>
           <AnimateIcon animateOnHover asChild>
             <Button asChild size="lg" variant="outline" className="h-11 rounded-full px-6">
-              <Link to={hero.secondaryCta.to} hash={hero.secondaryCta.hash}>
+              <Link to={hero.secondaryCta.to}>
                 <PhoneCall />
                 {hero.secondaryCta.label}
               </Link>

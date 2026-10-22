@@ -1,6 +1,6 @@
 import { AnimateIcon } from "@animate-ui/react/icons";
-import { site } from "@/site.config";
-import { Section } from "./section";
+import { services } from "../data";
+import { Section } from "@/components/shared/section";
 
 export function Services() {
   return (
@@ -11,7 +11,7 @@ export function Services() {
       subtitle="The most requested services in Plaridel and what you need to know about each."
     >
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {site.services.map(({ icon: Icon, title, body }) => (
+        {services.map(({ icon: Icon, title, body }) => (
           // Hovering anywhere on the card plays the icon's animation.
           <AnimateIcon key={title} animateOnHover asChild>
             <div className="rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-brand/40">

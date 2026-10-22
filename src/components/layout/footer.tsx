@@ -13,8 +13,8 @@ export function Footer() {
           <Link to="/about" className="hover:text-foreground">
             About
           </Link>
-          <Link to="/contact" className="hover:text-foreground">
-            Contact
+          <Link to="/hotlines" className="hover:text-foreground">
+            Hotlines
           </Link>
           <a href={`mailto:${site.email}`} className="hover:text-foreground">
             {site.email}

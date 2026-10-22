@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { AnimateIcon } from "@animate-ui/react/icons";
-import { Send } from "@/components/animate-ui/icons/send";
+import { PhoneCall } from "@/components/animate-ui/icons/phone-call";
 import { Button } from "@/components/ui/button";
 import { site } from "@/site.config";
 
@@ -14,7 +14,7 @@ export function Cta() {
         <AnimateIcon animateOnHover asChild>
           <Button asChild size="lg" variant="outline" className="mt-8 h-11 rounded-full border-white bg-white px-6 text-brand hover:bg-white/90 hover:text-brand">
             <Link to={cta.button.to}>
-              <Send />
+              <PhoneCall />
               {cta.button.label}
             </Link>
           </Button>

@@ -39,8 +39,8 @@ export function Navbar() {
         </div>
 
         <Button asChild className="hidden h-9 rounded-full px-4 md:inline-flex">
-          <Link to={site.hero.primaryCta.to} hash={site.hero.primaryCta.hash}>
-            {site.hero.primaryCta.label}
+          <Link to={site.primaryCta.to} hash={site.primaryCta.hash}>
+            {site.primaryCta.label}
           </Link>
         </Button>
 
