@@ -1,6 +1,7 @@
 import { FileCheck } from "@/components/animate-ui/icons/file-check";
 import { Route } from "@/components/animate-ui/icons/route";
 import { Wallet } from "@/components/animate-ui/icons/wallet";
+import { fmt, LATEST, municipality } from "@/features/statistics/demographics/data";
 import { site } from "@/site.config";
 
 // Text for the home page. Anything marked "TODO: verify" is a placeholder.
@@ -17,7 +18,7 @@ export const hero = {
 // TODO: verify — check the latest PSA census and municipal records.
 export const stats = [
   { value: "19", label: "Barangays" },
-  { value: "—", label: "Residents (PSA census)" },
+  { value: fmt.number(municipality.population[LATEST]), label: "Residents (2020 census)" },
   { value: "1936", label: "Renamed Plaridel" },
   { value: "24/7", label: "Emergency line: 911" },
 ] as const;
