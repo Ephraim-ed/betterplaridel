@@ -17,7 +17,7 @@ export function Hero() {
           {hero.eyebrow}
         </span>
         <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-bold tracking-tight text-balance sm:text-6xl">
-          {hero.title} kahit ano
+          {hero.title}
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-pretty text-muted-foreground">{hero.subtitle}</p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
