@@ -26,9 +26,25 @@ export function DashboardCard({
 }
 
 // Headline figure and notes on the left, a chart (or details) on the right.
-export function StatBody({ value, notes, side }: { value: ReactNode; notes: ReactNode; side: ReactNode }) {
+// `wideSide` gives the right side more room, for lists with longer labels.
+export function StatBody({
+  value,
+  notes,
+  side,
+  wideSide = false,
+}: {
+  value: ReactNode;
+  notes: ReactNode;
+  side: ReactNode;
+  wideSide?: boolean;
+}) {
   return (
-    <div className="grid min-h-0 flex-1 grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] gap-3">
+    <div
+      className={cn(
+        "grid min-h-0 flex-1 gap-3",
+        wideSide ? "grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)]" : "grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]",
+      )}
+    >
       <div className="flex flex-col justify-center">
         <p className="text-3xl leading-none font-semibold tracking-tight">{value}</p>
         <div className="mt-2 space-y-1 text-xs text-muted-foreground">{notes}</div>

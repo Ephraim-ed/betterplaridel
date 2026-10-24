@@ -1,10 +1,10 @@
 import { Bar, BarChart, LabelList, XAxis, YAxis } from "recharts";
 import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart";
+import { DashboardCard } from "@/features/statistics/components/dashboard-card";
+import { RollingNumber } from "@/features/statistics/components/rolling-number";
+import { segmentLabel } from "@/features/statistics/components/segment-label";
 import { chartColors } from "../colors";
 import { fmt, municipality, type Barangay, type SexBreakdown } from "../data";
-import { DashboardCard } from "./dashboard-card";
-import { RollingNumber } from "./rolling-number";
-import { segmentLabel } from "./segment-label";
 
 const config = {
   male: { label: "Male", color: chartColors.male },

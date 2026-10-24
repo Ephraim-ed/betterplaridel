@@ -4,10 +4,17 @@ import { homeRoute } from "./routes/home";
 import { aboutRoute } from "./routes/about";
 import { hotlinesRoute, contactRedirectRoute } from "./routes/hotlines";
 import { officialsRoute } from "./routes/officials";
-import { statisticsRoute } from "./routes/statistics";
+import { competitivenessRoute, demographicsRoute, statisticsIndexRoute, statisticsRoute } from "./routes/statistics";
 import { NotFound } from "./not-found";
 
-const routeTree = rootRoute.addChildren([homeRoute, aboutRoute, hotlinesRoute, officialsRoute, statisticsRoute, contactRedirectRoute]);
+const routeTree = rootRoute.addChildren([
+  homeRoute,
+  aboutRoute,
+  hotlinesRoute,
+  officialsRoute,
+  statisticsRoute.addChildren([statisticsIndexRoute, demographicsRoute, competitivenessRoute]),
+  contactRedirectRoute,
+]);
 
 export const router = createRouter({
   routeTree,

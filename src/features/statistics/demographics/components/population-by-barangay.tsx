@@ -2,10 +2,11 @@ import { useState } from "react";
 import { Bar, BarChart, LabelList, XAxis, YAxis } from "recharts";
 import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { DashboardCard } from "@/features/statistics/components/dashboard-card";
+import { FilledBar } from "@/features/statistics/components/filled-bar";
+import { WrappedTick } from "@/features/statistics/components/wrapped-tick";
 import { chartColors } from "../colors";
 import { barangays, density, fmt, LATEST, rankByPopulation, type Barangay } from "../data";
-import { DashboardCard } from "./dashboard-card";
-import { FilledBar } from "./filled-bar";
 
 const config = { population: { label: "Residents" } } satisfies ChartConfig;
 
@@ -73,7 +74,7 @@ function PopulationChart({ selected, onSelect }: Props) {
             tickLine={false}
             axisLine={{ stroke: "var(--border)" }}
             height={36}
-            tick={(props) => <NameTick {...props} selected={selected?.name} />}
+            tick={(props) => <WrappedTick {...props} selected={selected?.name} />}
           />
         ) : (
           <>
@@ -102,27 +103,6 @@ function PopulationChart({ selected, onSelect }: Props) {
         </Bar>
       </BarChart>
     </ChartContainer>
-  );
-}
-
-// Two-word names wrap onto two lines so all 19 fit under their columns.
-function NameTick({ x, y, payload, selected }: { x?: number | string; y?: number | string; payload?: { value?: string }; selected?: string }) {
-  const name = String(payload?.value ?? "");
-  const lines = name.includes(" ") && name.length > 8 ? name.split(" ") : [name];
-  return (
-    <text
-      x={Number(x)}
-      y={Number(y)}
-      textAnchor="middle"
-      fontSize={11}
-      className={name === selected ? "fill-foreground font-semibold" : "fill-muted-foreground"}
-    >
-      {lines.map((line, i) => (
-        <tspan key={line} x={Number(x)} dy={i === 0 ? 10 : 12}>
-          {line}
-        </tspan>
-      ))}
-    </text>
   );
 }
 

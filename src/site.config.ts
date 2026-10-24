@@ -2,6 +2,12 @@
 // Feature-specific content lives in each feature's data.ts (e.g. src/features/hotlines/data.ts).
 // Anything marked "TODO: verify" is a placeholder — confirm it with the municipal hall before publishing.
 
+// The Statistics pages, listed in the navbar dropdown and as tabs on each page.
+export const statisticsModules = [
+  { label: "Demographics", to: "/statistics/demographics", description: "Population, land area and barangays" },
+  { label: "Competitiveness", to: "/statistics/competitiveness", description: "DTI competitiveness scores and ranks" },
+] as const;
+
 export const site = {
   name: "BetterPlaridel",
   town: "Plaridel, Bulacan",
@@ -17,7 +23,7 @@ export const site = {
     { label: "Services", to: "/", hash: "services" },
     { label: "Hotlines", to: "/hotlines" },
     { label: "Officials", to: "/officials" },
-    { label: "Statistics", to: "/statistics" },
+    { label: "Statistics", to: "/statistics", children: statisticsModules },
     { label: "Announcements", to: "/", hash: "announcements" },
     { label: "About", to: "/about" },
   ],
