@@ -1,10 +1,10 @@
 import { Bar, BarChart, LabelList, XAxis } from "recharts";
 import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart";
+import { DashboardCard, StatBody } from "@/features/statistics/components/dashboard-card";
+import { FilledBar } from "@/features/statistics/components/filled-bar";
+import { RollingNumber } from "@/features/statistics/components/rolling-number";
 import { chartColors } from "../colors";
 import { CENSUS_YEARS, fmt, LATEST, municipality, rankByPopulation, type Barangay } from "../data";
-import { DashboardCard, StatBody } from "./dashboard-card";
-import { FilledBar } from "./filled-bar";
-import { RollingNumber } from "./rolling-number";
 
 const config = { population: { label: "Residents" } } satisfies ChartConfig;
 

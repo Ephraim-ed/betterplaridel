@@ -1,9 +1,9 @@
 import { Bar, BarChart, LabelList, XAxis, YAxis } from "recharts";
 import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart";
+import { DashboardCard, StatBody } from "@/features/statistics/components/dashboard-card";
+import { RollingNumber } from "@/features/statistics/components/rolling-number";
 import { chartColors } from "../colors";
 import { barangays, density, fmt, LATEST, mappedAreaKm2, municipality, type Barangay } from "../data";
-import { DashboardCard, StatBody } from "./dashboard-card";
-import { RollingNumber } from "./rolling-number";
 
 const config = { share: { label: "Share of Plaridel", color: chartColors.accent } } satisfies ChartConfig;
 

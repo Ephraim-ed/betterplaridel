@@ -1,10 +1,10 @@
 import { Bar, BarChart, LabelList, XAxis, YAxis } from "recharts";
 import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart";
+import { DashboardCard, StatBody } from "@/features/statistics/components/dashboard-card";
+import { RollingNumber } from "@/features/statistics/components/rolling-number";
+import { segmentLabel } from "@/features/statistics/components/segment-label";
 import { chartColors } from "../colors";
 import { barangays, fmt, urbanRural, type Barangay } from "../data";
-import { DashboardCard, StatBody } from "./dashboard-card";
-import { RollingNumber } from "./rolling-number";
-import { segmentLabel } from "./segment-label";
 
 const config = {
   urban: { label: "Urban", color: chartColors.urban },
