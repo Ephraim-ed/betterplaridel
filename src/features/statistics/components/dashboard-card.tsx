@@ -15,7 +15,7 @@ export function DashboardCard({
   children: ReactNode;
 }) {
   return (
-    <Card size="sm" className={cn("min-h-0 overflow-visible [&_.recharts-tooltip-wrapper]:z-50", className)}>
+    <Card size="sm" className={cn("min-h-0", className)}>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         {action && <CardAction className="text-xs text-muted-foreground">{action}</CardAction>}
@@ -46,7 +46,7 @@ export function StatBody({
       )}
     >
       <div className="flex flex-col justify-center">
-        <p className="text-3xl leading-none font-semibold tracking-tight">{value}</p>
+        <p className="text-2xl leading-none font-semibold tracking-tight whitespace-nowrap xl:text-3xl">{value}</p>
         <div className="mt-2 space-y-1 text-xs text-muted-foreground">{notes}</div>
       </div>
       <div className="h-32 min-h-0 lg:h-auto">{side}</div>

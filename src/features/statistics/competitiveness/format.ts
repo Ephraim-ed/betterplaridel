@@ -1,5 +1,5 @@
 // Plaridel against everyone else; the same validated brand and context colors as the demographics charts.
-export const colors = { plaridel: "#047857", others: "#cbd5e1" } as const;
+export const colors = { plaridel: "#047857", others: "#cbd5e1", average: "#e5a800" } as const;
 
 export const score = (n: number) => n.toFixed(2);
 

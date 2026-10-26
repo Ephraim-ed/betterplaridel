@@ -1,5 +1,6 @@
 import { createRoute, redirect } from "@tanstack/react-router";
 import { rootRoute } from "../root";
+import { StatisticsLayout } from "@/features/statistics/components/statistics-layout";
 import { Competitiveness } from "@/features/statistics/competitiveness/components/competitiveness";
 import { Demographics } from "@/features/statistics/demographics/components/demographics";
 
@@ -7,6 +8,7 @@ import { Demographics } from "@/features/statistics/demographics/components/demo
 export const statisticsRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/statistics",
+  component: StatisticsLayout,
 });
 
 export const statisticsIndexRoute = createRoute({
