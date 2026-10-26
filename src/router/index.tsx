@@ -4,7 +4,13 @@ import { homeRoute } from "./routes/home";
 import { aboutRoute } from "./routes/about";
 import { hotlinesRoute, contactRedirectRoute } from "./routes/hotlines";
 import { officialsRoute } from "./routes/officials";
-import { competitivenessRoute, demographicsRoute, statisticsIndexRoute, statisticsRoute } from "./routes/statistics";
+import {
+  competitivenessRoute,
+  demographicsRoute,
+  incomeRoute,
+  statisticsIndexRoute,
+  statisticsRoute,
+} from "./routes/statistics";
 import { NotFound } from "./not-found";
 
 const routeTree = rootRoute.addChildren([
@@ -12,7 +18,7 @@ const routeTree = rootRoute.addChildren([
   aboutRoute,
   hotlinesRoute,
   officialsRoute,
-  statisticsRoute.addChildren([statisticsIndexRoute, demographicsRoute, competitivenessRoute]),
+  statisticsRoute.addChildren([statisticsIndexRoute, demographicsRoute, competitivenessRoute, incomeRoute]),
   contactRedirectRoute,
 ]);
 
