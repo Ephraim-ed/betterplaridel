@@ -1,18 +1,13 @@
-import { Bar, BarChart, LabelList, XAxis } from "recharts";
-import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart";
 import { DashboardCard, StatBody } from "@/features/statistics/components/dashboard-card";
-import { FilledBar } from "@/features/statistics/components/filled-bar";
 import { RollingNumber } from "@/features/statistics/components/rolling-number";
 import { CMCI_YEAR, overall } from "../data";
 import { colors, score, signedScore } from "../format";
 
-const config = { score: { label: "Overall score" } } satisfies ChartConfig;
-
-// Plaridel is the story; its category's average and best are context.
-const data = [
-  { name: "Plaridel", score: overall.score, fill: colors.plaridel },
-  { name: "Average", score: overall.categoryAverage, fill: colors.others },
-  { name: "Best", score: overall.categoryBest, fill: colors.others },
+// Plaridel is the story; its category's average and best are context. Bars all start at zero.
+const rows = [
+  { name: "Plaridel", score: overall.score, color: colors.plaridel },
+  { name: "Category average", score: overall.categoryAverage, color: colors.others },
+  { name: "Category best", score: overall.categoryBest, color: colors.others },
 ];
 
 export function OverallCard({ className }: { className?: string }) {
@@ -27,25 +22,22 @@ export function OverallCard({ className }: { className?: string }) {
         }
         notes={<p>{signedScore(overall.score - overall.categoryAverage)} vs. category average</p>}
         side={
-          <ChartContainer config={config} className="aspect-auto h-full w-full">
-            <BarChart data={data} margin={{ top: 18, right: 4, bottom: 0, left: 4 }}>
-              <XAxis dataKey="name" tickLine={false} axisLine={{ stroke: "var(--border)" }} tickMargin={6} fontSize={11} />
-              <ChartTooltip
-                cursor={false}
-                content={<ChartTooltipContent hideIndicator formatter={(v) => score(Number(v))} />}
-              />
-              <Bar dataKey="score" barSize={22} radius={[4, 4, 0, 0]} shape={FilledBar}>
-                <LabelList
-                  dataKey="score"
-                  position="top"
-                  offset={6}
-                  formatter={(v) => score(Number(v))}
-                  className="fill-foreground"
-                  fontSize={11}
-                />
-              </Bar>
-            </BarChart>
-          </ChartContainer>
+          <ul className="flex h-full flex-col justify-center gap-2">
+            {rows.map((r) => (
+              <li key={r.name} className="min-w-0 text-[11px]">
+                <div className="flex items-baseline justify-between gap-2">
+                  <span className="truncate text-muted-foreground">{r.name}</span>
+                  <span className="shrink-0 font-medium tabular-nums">{score(r.score)}</span>
+                </div>
+                <div className="mt-0.5 h-2 rounded-sm bg-muted">
+                  <div
+                    className="h-full rounded-sm"
+                    style={{ width: `${(r.score / overall.categoryBest) * 100}%`, backgroundColor: r.color }}
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
         }
       />
     </DashboardCard>

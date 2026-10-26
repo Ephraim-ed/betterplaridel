@@ -1,12 +1,15 @@
 import { createRoute, redirect } from "@tanstack/react-router";
 import { rootRoute } from "../root";
+import { StatisticsLayout } from "@/features/statistics/components/statistics-layout";
 import { Competitiveness } from "@/features/statistics/competitiveness/components/competitiveness";
 import { Demographics } from "@/features/statistics/demographics/components/demographics";
+import { Income } from "@/features/statistics/income/components/income";
 
 // Statistics is a parent for its modules; /statistics itself opens the first one.
 export const statisticsRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/statistics",
+  component: StatisticsLayout,
 });
 
 export const statisticsIndexRoute = createRoute({
@@ -33,4 +36,10 @@ export const competitivenessRoute = createRoute({
     pillar: typeof search.pillar === "string" ? search.pillar : undefined,
   }),
   component: Competitiveness,
+});
+
+export const incomeRoute = createRoute({
+  getParentRoute: () => statisticsRoute,
+  path: "income",
+  component: Income,
 });

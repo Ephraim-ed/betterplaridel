@@ -6,6 +6,7 @@
 export const statisticsModules = [
   { label: "Demographics", to: "/statistics/demographics", description: "Population, land area and barangays" },
   { label: "Competitiveness", to: "/statistics/competitiveness", description: "DTI competitiveness scores and ranks" },
+  { label: "Income", to: "/statistics/income", description: "Annual regular income and where it comes from" },
 ] as const;
 
 export const site = {

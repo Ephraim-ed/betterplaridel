@@ -1,9 +1,31 @@
 import { useState, type CSSProperties, type KeyboardEvent } from "react";
 import { cn } from "cn";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { densityBreaks, densityClass, densityInk, densityRamp } from "../colors";
 import { barangays, density, fmt, LATEST, type Barangay } from "../data";
 import { barangayShapes, LABEL_SIZE, MAP_SIZE } from "../map";
+
+// Each shape's bounding box, parsed from its path (paths use absolute M/L/Z commands only).
+const bounds = Object.fromEntries(
+  Object.entries(barangayShapes).map(([psgc, { d }]) => {
+    const n = d.match(/-?\d+(?:\.\d+)?/g)!.map(Number);
+    const xs = n.filter((_, i) => i % 2 === 0);
+    const ys = n.filter((_, i) => i % 2 === 1);
+    return [psgc, { x0: Math.min(...xs), x1: Math.max(...xs), y0: Math.min(...ys), y1: Math.max(...ys) }];
+  }),
+);
+
+// Zoom that frames a barangay in the middle of the map, as a transform in the map's own units.
+const MAX_ZOOM = 2.6;
+const FILL = 0.6;
+function zoomOn(b?: Barangay) {
+  if (!b) return { k: 1, x: 0, y: 0 };
+  const { x0, x1, y0, y1 } = bounds[b.psgc];
+  const k = Math.max(1, Math.min(MAX_ZOOM, (FILL * MAP_SIZE.width) / (x1 - x0), (FILL * MAP_SIZE.height) / (y1 - y0)));
+  const x = MAP_SIZE.width / 2 - (k * (x0 + x1)) / 2;
+  const y = MAP_SIZE.height / 2 - (k * (y0 + y1)) / 2;
+  return { k, x, y };
+}
 
 const shadeOf = (b: Barangay) => densityClass(density(b.population[LATEST], b.areaKm2));
 
@@ -24,6 +46,7 @@ export function BarangayMap({
   className?: string;
 }) {
   const [hovered, setHovered] = useState<Barangay>();
+  const zoom = zoomOn(selected);
 
   // Clicking the selected barangay again goes back to the whole town.
   const toggle = (b: Barangay) => onSelect(selected === b ? undefined : b);
@@ -35,10 +58,20 @@ export function BarangayMap({
   };
 
   return (
-    <Card size="sm" className={cn("min-h-0", className)}>
+    <Card size="sm" className={cn("min-h-0 overflow-visible ring-0", className)}>
       <CardHeader>
         <CardTitle>Geography</CardTitle>
-        <CardDescription>Plaridel&apos;s 19 barangays. Select one to see its numbers.</CardDescription>
+        {selected && (
+          <CardAction>
+            <button
+              type="button"
+              onClick={() => onSelect(undefined)}
+              className="animate-in fade-in-0 rounded-full border border-line px-2.5 py-0.5 text-xs font-medium text-brand transition-colors hover:bg-muted"
+            >
+              Reset view
+            </button>
+          </CardAction>
+        )}
       </CardHeader>
       <CardContent className="flex min-h-0 flex-1 flex-col gap-3">
         {/* On desktop the map scales to fit both the width and the height of its slot. */}
@@ -47,13 +80,18 @@ export function BarangayMap({
             className="relative w-full lg:w-[min(100cqw,calc(100cqh*var(--map-ratio)))]"
             style={{ "--map-ratio": MAP_SIZE.width / MAP_SIZE.height } as CSSProperties}
           >
+            <div className="overflow-hidden rounded-lg">
             <svg
               viewBox={`0 0 ${MAP_SIZE.width} ${MAP_SIZE.height}`}
               role="group"
               aria-label="Map of Plaridel's barangays. Select a barangay to see its numbers."
-              className="h-auto w-full overflow-visible"
+              className="block h-auto w-full"
             >
-              {barangays.map((b) => (
+              <g
+                style={{ transform: `translate(${zoom.x}px, ${zoom.y}px) scale(${zoom.k})` }}
+                className="transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
+              >
+              {barangays.map((b, i) => (
                 <path
                   key={b.psgc}
                   d={barangayShapes[b.psgc].d}
@@ -73,7 +111,8 @@ export function BarangayMap({
                   onPointerLeave={() => setHovered(undefined)}
                   onFocus={() => setHovered(b)}
                   onBlur={() => setHovered(undefined)}
-                  className="cursor-pointer outline-none transition-opacity"
+                  style={{ animation: `map-shape-in 0.5s ease-out ${i * 25}ms backwards` }}
+                  className="cursor-pointer outline-none transition-opacity duration-300 motion-reduce:!animate-none"
                 />
               ))}
 
@@ -119,6 +158,7 @@ export function BarangayMap({
               )}
               {selected && (
                 <path
+                  key={selected.psgc}
                   d={barangayShapes[selected.psgc].d}
                   fill="none"
                   stroke="#0f172a"
@@ -126,11 +166,15 @@ export function BarangayMap({
                   strokeLinejoin="round"
                   vectorEffect="non-scaling-stroke"
                   pointerEvents="none"
+                  style={{ animation: "map-outline-in 0.6s ease-out 0.15s backwards" }}
+                  className="motion-reduce:!animate-none"
                 />
               )}
+              </g>
             </svg>
+            </div>
 
-            {hovered && <MapTooltip barangay={hovered} />}
+            {hovered && <MapTooltip barangay={hovered} zoom={zoom} />}
           </div>
         </div>
 
@@ -151,8 +195,10 @@ export function BarangayMap({
 }
 
 // Anchored inside the barangay's shape; flips below or sideways near the map's edges.
-function MapTooltip({ barangay: b }: { barangay: Barangay }) {
-  const [x, y] = barangayShapes[b.psgc].center;
+function MapTooltip({ barangay: b, zoom }: { barangay: Barangay; zoom: ReturnType<typeof zoomOn> }) {
+  const [cx, cy] = barangayShapes[b.psgc].center;
+  const x = zoom.k * cx + zoom.x;
+  const y = zoom.k * cy + zoom.y;
   const left = (x / MAP_SIZE.width) * 100;
   const top = (y / MAP_SIZE.height) * 100;
   const shiftX = left < 25 ? "0%" : left > 75 ? "-100%" : "-50%";

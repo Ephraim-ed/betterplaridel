@@ -1,44 +1,48 @@
-import { Bar, BarChart, LabelList, XAxis, YAxis } from "recharts";
-import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart";
-import { DashboardCard, StatBody } from "@/features/statistics/components/dashboard-card";
+import { DashboardCard } from "@/features/statistics/components/dashboard-card";
 import { RollingNumber } from "@/features/statistics/components/rolling-number";
-import { segmentLabel } from "@/features/statistics/components/segment-label";
 import { chartColors } from "../colors";
 import { barangays, fmt, urbanRural, type Barangay } from "../data";
 
-const config = {
-  urban: { label: "Urban", color: chartColors.urban },
-  rural: { label: "Rural", color: chartColors.rural },
-} satisfies ChartConfig;
+const kinds = { urban: { label: "Urban", color: chartColors.urban }, rural: { label: "Rural", color: chartColors.rural } };
+const totalResidents = urbanRural.reduce((sum, k) => sum + k.residents, 0);
 
-const [urban, rural] = urbanRural;
-const totalResidents = urban.residents + rural.residents;
-const rows = [
-  { row: "Barangays", urban: urban.barangays, rural: rural.barangays },
-  { row: "Residents", urban: urban.residents, rural: rural.residents },
-];
-// Barangays as counts, residents as shares.
-const text = (kind: "urban" | "rural") => (row: number) =>
-  row === 0 ? String(rows[0][kind]) : fmt.percent(rows[1][kind] / totalResidents);
-
-const Swatch = ({ kind }: { kind: "urban" | "rural" }) => (
-  <span aria-hidden className="inline-block size-2.5 rounded-[2px]" style={{ backgroundColor: config[kind].color }} />
-);
+function ShareBar({ label, values }: { label: string; values: Record<"urban" | "rural", number> }) {
+  const total = values.urban + values.rural;
+  return (
+    <div className="flex items-center gap-3 text-[7px]">
+      <span className="w-14 shrink-0 text-muted-foreground">{label}</span>
+      <div className="flex h-5 min-w-0 flex-1 gap-0.5 overflow-hidden rounded-md">
+        {(["urban", "rural"] as const).map((k) => (
+          <div
+            key={k}
+            title={`${kinds[k].label}: ${fmt.percent(values[k] / total)}`}
+            className="grid place-items-center font-medium tabular-nums"
+            style={{
+              width: `${(values[k] / total) * 100}%`,
+              backgroundColor: kinds[k].color,
+              color: k === "urban" ? "#ffffff" : "#0f172a",
+            }}
+          >
+            {fmt.percent(values[k] / total)}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function UrbanRuralCard({ barangay }: { barangay?: Barangay }) {
-  const kind = barangay?.urban ? urban : rural;
+  const selectedKind = barangay ? (barangay.urban ? "urban" : "rural") : undefined;
 
   return (
     <DashboardCard
       title="Urban and rural"
       action={
-        <span className="flex items-center gap-3" title="PSA classes barangays using criteria such as population size and the businesses and public facilities present.">
-          {(["urban", "rural"] as const).map((k) => (
-            <span key={k} className="flex items-center gap-1">
-              <Swatch kind={k} />
-              {config[k].label}
-            </span>
-          ))}
+        <span
+          className="cursor-help underline decoration-dotted underline-offset-2"
+          title="PSA classes barangays using criteria such as population size and the businesses and public facilities present."
+        >
+          How it&apos;s classed
         </span>
       }
     >

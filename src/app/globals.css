@@ -127,3 +127,14 @@ html {
     @apply font-sans;
   }
 }
+@keyframes map-shape-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes map-outline-in {
+  from {
+    stroke-width: 9px;
+    opacity: 0;
+  }
+}
