@@ -3,7 +3,7 @@ export const chartColors = {
   accent: "#047857", // brand; single-series bars and the selected barangay
   context: "#cbd5e1", // bars pushed to the background while a barangay is selected
   urban: "#047857",
-  rural: "#d97706",
+  rural: "#e5a800",
   male: "#2a78d6",
   female: "#e87ba4",
 } as const;

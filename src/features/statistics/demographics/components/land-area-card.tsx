@@ -1,92 +1,83 @@
-import { Bar, BarChart, LabelList, XAxis, YAxis } from "recharts";
-import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart";
-import { DashboardCard, StatBody } from "@/features/statistics/components/dashboard-card";
+import { useId } from "react";
+import { Area, AreaChart, ReferenceDot, XAxis, YAxis } from "recharts";
+import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
+import { DashboardCard } from "@/features/statistics/components/dashboard-card";
 import { RollingNumber } from "@/features/statistics/components/rolling-number";
 import { chartColors } from "../colors";
-import { barangays, density, fmt, LATEST, mappedAreaKm2, municipality, type Barangay } from "../data";
+import { barangays, density, fmt, LATEST, municipality, type Barangay } from "../data";
 
-const config = { share: { label: "Share of Plaridel", color: chartColors.accent } } satisfies ChartConfig;
+const config = { areaKm2: { label: "Land area", color: chartColors.accent } } satisfies ChartConfig;
+
+const bySize = [...barangays].sort((a, b) => b.areaKm2 - a.areaKm2);
+const townDensity = density(municipality.population[LATEST], municipality.landAreaKm2);
 
 export function LandAreaCard({ barangay }: { barangay?: Barangay }) {
   const area = barangay ? barangay.areaKm2 : municipality.landAreaKm2;
   const population = (barangay ?? municipality).population[LATEST];
+  const perKm2 = density(population, area);
   const approx = barangay ? "≈ " : "";
 
   return (
     <DashboardCard title="Land area" action={barangay ? "Approximate" : "Official"}>
-      <StatBody
-        value={
-          <>
+      <div className="flex min-h-0 flex-1 flex-col gap-1">
+        <div className="flex flex-1 flex-col items-center justify-center text-center">
+          <p className="text-3xl leading-none font-semibold tracking-tight whitespace-nowrap">
             {approx}
             <RollingNumber value={area} decimals={2} />
             <span className="text-base font-medium"> km²</span>
-          </>
-        }
-        notes={
-          <p>
-            {approx}
-            {fmt.number(density(population, area))} residents per km²
           </p>
-        }
-        side={barangay ? <ShareChart barangay={barangay} /> : <TownFacts />}
-      />
+          <p className="mt-2 text-xs whitespace-nowrap text-muted-foreground">
+            {approx}
+            {fmt.number(perKm2)} residents per km²
+          </p>
+          <p className="text-xs whitespace-nowrap text-muted-foreground">
+            {barangay
+              ? `#${bySize.indexOf(barangay) + 1} of ${barangays.length} in size · ${(perKm2 / townDensity).toFixed(1)}× town density`
+              : `${barangays.length} barangays · ${municipality.incomeClass} class`}
+          </p>
+        </div>
+        <SizeProfile barangay={barangay} />
+      </div>
     </DashboardCard>
   );
 }
 
-function TownFacts() {
-  const facts = [
-    { label: "Barangays", value: <RollingNumber value={barangays.length} /> },
-    { label: "Income class", value: municipality.incomeClass },
-  ];
-  return (
-    <dl className="flex h-full flex-col justify-center gap-3">
-      {facts.map((f) => (
-        <div key={f.label}>
-          <dt className="text-xs text-muted-foreground">{f.label}</dt>
-          <dd className="text-lg leading-tight font-semibold">{f.value}</dd>
-        </div>
-      ))}
-    </dl>
-  );
-}
-
-// Does the barangay hold more of Plaridel's people than of its land, or less?
-function ShareChart({ barangay }: { barangay: Barangay }) {
-  const data = [
-    { measure: "Land", share: barangay.areaKm2 / mappedAreaKm2 },
-    { measure: "Residents", share: barangay.population[LATEST] / municipality.population[LATEST] },
-  ];
+// Every barangay's land area, largest to smallest, drawn edge to edge along the bottom of the card.
+// A selected barangay is marked on the curve. Decorative: it has no hover.
+function SizeProfile({ barangay }: { barangay?: Barangay }) {
+  const gradientId = useId();
+  const data = bySize.map((b) => ({ name: b.name, areaKm2: b.areaKm2 }));
+  const marked = barangay ? data.findIndex((d) => d.name === barangay.name) : -1;
 
   return (
-    <div className="flex h-full flex-col">
-      <p className="text-xs text-muted-foreground">Share of Plaridel</p>
-      <ChartContainer config={config} className="aspect-auto min-h-0 w-full flex-1">
-        <BarChart data={data} layout="vertical" margin={{ top: 0, right: 40, bottom: 0, left: 0 }}>
-          <XAxis type="number" dataKey="share" domain={[0, "dataMax"]} hide />
-          <YAxis
-            type="category"
-            dataKey="measure"
-            tickLine={false}
-            axisLine={{ stroke: "var(--border)" }}
-            width={62}
-            fontSize={11}
+    <div
+      aria-hidden
+      className="pointer-events-none relative -mx-(--card-spacing) -mb-(--card-spacing) h-14 shrink-0 overflow-hidden rounded-b-xl"
+    >
+      <ChartContainer config={config} className="aspect-auto h-full w-full">
+        <AreaChart data={data} margin={{ top: 6, right: 0, bottom: 0, left: 0 }}>
+          <defs>
+            <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor={chartColors.accent} stopOpacity={0.35} />
+              <stop offset="100%" stopColor={chartColors.accent} stopOpacity={0} />
+            </linearGradient>
+          </defs>
+          <XAxis dataKey="name" hide />
+          <YAxis hide domain={[0, "dataMax"]} />
+          <Area
+            dataKey="areaKm2"
+            type="monotone"
+            stroke={chartColors.accent}
+            strokeWidth={2.5}
+            fill={`url(#${gradientId})`}
+            dot={false}
+            activeDot={false}
+            isAnimationActive={false}
           />
-          <ChartTooltip
-            cursor={false}
-            content={<ChartTooltipContent hideIndicator formatter={(v) => fmt.percent(Number(v))} />}
-          />
-          <Bar dataKey="share" fill="var(--color-share)" maxBarSize={18} radius={[0, 4, 4, 0]}>
-            <LabelList
-              dataKey="share"
-              position="right"
-              offset={6}
-              formatter={(v) => fmt.percent(Number(v))}
-              className="fill-foreground"
-              fontSize={11}
-            />
-          </Bar>
-        </BarChart>
+          {marked >= 0 && (
+            <ReferenceDot x={data[marked].name} y={data[marked].areaKm2} r={4.5} fill={chartColors.accent} stroke="var(--card)" strokeWidth={2} />
+          )}
+        </AreaChart>
       </ChartContainer>
     </div>
   );

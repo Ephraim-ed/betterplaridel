@@ -1,59 +1,58 @@
-import type { ReactNode } from "react";
-import { Link } from "@tanstack/react-router";
+import { useContext, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 import { cn } from "cn";
-import { statisticsModules } from "@/site.config";
+import { InfoIcon } from "lucide-react";
+import { TabActionsContext } from "./statistics-layout";
+import { StatisticsTour, type TourStep } from "./statistics-tour";
 
-// Frame shared by every statistics module: the module tabs, a status line and the module's own controls,
-// then the module's cards and a source note. With `fit`, it is exactly one screen tall on desktop
-// (the viewport minus the navbar: 4rem plus its 1px border); otherwise the page scrolls normally.
+// Body shared by every statistics module (the header and tabs live in StatisticsLayout): an optional info bar with
+// the module's own controls beside it, then the module's cards and a source note.
 export function StatisticsDashboard({
   status,
   controls,
+  tour,
   source,
-  fit = false,
   children,
 }: {
-  status: ReactNode;
+  status?: ReactNode;
   controls?: ReactNode;
+  // `inTabs` puts the quick tour button on the tab row instead of beside the module's controls.
+  tour?: { id: string; steps: readonly TourStep[]; inTabs?: boolean };
   source: ReactNode;
-  fit?: boolean;
   children: ReactNode;
 }) {
+  // The tab row belongs to the layout above; it hands us its slot.
+  const tabActions = useContext(TabActionsContext);
+
+  const tourInTabs = tour?.inTabs;
+  const tourBesideControls = tour && !tourInTabs;
+
   return (
-    <section
-      aria-labelledby="statistics"
-      className={cn(
-        "container-page flex flex-col gap-3 py-4",
-        fit ? "lg:h-[calc(100dvh-4rem-1px)] lg:min-h-[36rem]" : "pb-16",
-      )}
-    >
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <h1 id="statistics" className="sr-only">
-            Statistics
-          </h1>
-          <nav aria-label="Statistics" className="flex flex-wrap gap-x-5">
-            {statisticsModules.map((m) => (
-              <Link
-                key={m.to}
-                to={m.to}
-                className="text-xl font-bold tracking-tight text-muted-foreground decoration-brand decoration-2 underline-offset-8 transition-colors hover:text-foreground sm:text-2xl"
-                activeProps={{ className: "!text-foreground underline" }}
-              >
-                {m.label}
-              </Link>
-            ))}
-          </nav>
-          <p aria-live="polite" className="mt-1 flex flex-wrap items-center gap-x-2 text-sm text-muted-foreground">
-            {status}
-          </p>
+    <div className="flex flex-col gap-4">
+      {tour && tourInTabs && tabActions && createPortal(<StatisticsTour id={tour.id} steps={tour.steps} />, tabActions)}
+      {(status || controls || tourBesideControls) && (
+        <div className="flex flex-wrap items-center gap-3">
+          {status && (
+            <div
+              role="status"
+              className="flex min-w-0 flex-1 basis-80 items-start gap-3 rounded-lg border border-brand/25 bg-brand/5 px-4 py-2.5 text-sm text-foreground/80"
+            >
+              <InfoIcon aria-hidden className="mt-0.5 size-4 shrink-0 text-brand" />
+              <p className="flex flex-wrap items-center gap-x-2">{status}</p>
+            </div>
+          )}
+          {(controls || tourBesideControls) && (
+            <div className={cn("flex flex-wrap items-center gap-3", !status && "ml-auto")}>
+              {controls}
+              {tourBesideControls && <StatisticsTour id={tour.id} steps={tour.steps} />}
+            </div>
+          )}
         </div>
-        {controls}
-      </div>
+      )}
 
       {children}
 
-      <p className="text-xs text-muted-foreground lg:truncate">{source}</p>
-    </section>
+      <p className="text-xs text-muted-foreground">{source}</p>
+    </div>
   );
 }

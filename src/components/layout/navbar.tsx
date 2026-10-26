@@ -33,7 +33,7 @@ function NavLink({ item, onNavigate, children }: { item: NavItem; onNavigate?: (
 function NavDropdown({ item }: { item: NavItem & { children: readonly { label: string; to: string; description: string }[] } }) {
   return (
     <div
-      className="group relative"
+      className="group relative flex items-center"
       onClick={(e) => (e.target as HTMLElement).closest("a")?.blur()}
     >
       <NavLink item={item}>
@@ -99,6 +99,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-line bg-background/80 backdrop-blur">
       <nav className="container-page flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 font-semibold tracking-tight">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/betterplaridel-symbol.svg" alt="" aria-hidden className="h-8 w-auto" />
           <span className="flex flex-col items-end text-brand">
             <span className="text-xl leading-none font-extrabold tracking-[-0.04em]">

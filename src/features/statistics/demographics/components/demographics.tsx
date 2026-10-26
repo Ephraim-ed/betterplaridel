@@ -3,11 +3,34 @@ import { StatisticsDashboard } from "@/features/statistics/components/statistics
 import { barangayBySlug, type Barangay } from "../data";
 import { BarangayMap } from "./barangay-map";
 import { BarangaySearch } from "./barangay-search";
+import { GrowthCard } from "./growth-card";
 import { LandAreaCard } from "./land-area-card";
 import { PopulationByBarangay } from "./population-by-barangay";
 import { PopulationCard } from "./population-card";
-import { SexCard } from "./sex-card";
 import { UrbanRuralCard } from "./urban-rural-card";
+
+const tourSteps = [
+  {
+    graphic: "overview",
+    title: "Plaridel at a glance",
+    body: "This page shows how many people live in Plaridel, how big the town is, and how its 19 barangays compare. The numbers come from the 2015 and 2020 censuses of the Philippine Statistics Authority.",
+  },
+  {
+    graphic: "pick",
+    title: "Pick a barangay",
+    body: "Click a barangay on the map, a bar in the population chart, or use the search box. Every card then switches to that barangay. Click it again, or press Reset view, to go back to all of Plaridel.",
+  },
+  {
+    graphic: "legend",
+    title: "Reading the map",
+    body: "Darker green means more residents per square kilometre. Hover a barangay for its numbers. Land areas are approximate, measured from boundary maps.",
+  },
+  {
+    graphic: "charts",
+    title: "Charts and tables",
+    body: "Hover any chart for exact values. “Population by barangay” can also be shown as a table with growth, land area and density. Your selected barangay is saved in the page link, so you can share it.",
+  },
+] as const;
 
 const route = getRouteApi("/statistics/demographics");
 
@@ -38,6 +61,7 @@ export function Demographics() {
           "Showing all of Plaridel. Pick a barangay on the map, the chart or the search box."
         )
       }
+      tour={{ id: "demographics", steps: tourSteps, inTabs: true }}
       controls={<BarangaySearch onSelect={select} className="w-full sm:w-72" />}
       source={
         <>
@@ -53,10 +77,9 @@ export function Demographics() {
           (2015 and 2020 census). Barangay land areas are approximate, measured from boundary maps.
         </>
       }
-      fit
     >
-      {/* Desktop: two small columns and a wide one, over two rows, plus a full-width bottom row. */}
-      <div className="grid gap-3 sm:grid-cols-2 lg:min-h-0 lg:flex-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.45fr)] lg:grid-rows-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.2fr)]">
+      {/* Desktop: two small columns and a wide one, over two fixed-height rows, plus a full-width bottom row. */}
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.45fr)] lg:grid-rows-[13rem_13rem_24rem]">
         <BarangayMap
           selected={selected}
           onSelect={select}
@@ -64,7 +87,7 @@ export function Demographics() {
         />
         <PopulationCard barangay={selected} />
         <LandAreaCard barangay={selected} />
-        <SexCard barangay={selected} />
+        <GrowthCard barangay={selected} />
         <UrbanRuralCard barangay={selected} />
         <PopulationByBarangay selected={selected} onSelect={select} className="sm:col-span-2 lg:col-span-3" />
       </div>
