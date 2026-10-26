@@ -71,7 +71,7 @@ export function UrbanRuralCard({ barangay }: { barangay?: Barangay }) {
               <BarChart data={rows} layout="vertical" stackOffset="expand" margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
                 <XAxis type="number" hide />
                 <YAxis type="category" dataKey="row" tickLine={false} axisLine={false} width={62} fontSize={11} />
-                <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+                <ChartTooltip cursor={false} content={<ChartTooltipContent hideIndicator />} />
                 <Bar dataKey="urban" stackId="class" fill="var(--color-urban)" stroke="var(--card)" strokeWidth={2} maxBarSize={22} radius={[4, 0, 0, 4]}>
                   <LabelList dataKey="urban" content={segmentLabel(text("urban"), "#ffffff")} />
                 </Bar>
