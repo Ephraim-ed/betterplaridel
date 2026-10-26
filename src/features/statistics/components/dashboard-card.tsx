@@ -15,7 +15,7 @@ export function DashboardCard({
   children: ReactNode;
 }) {
   return (
-    <Card size="sm" className={cn("min-h-0", className)}>
+    <Card size="sm" className={cn("min-h-0 overflow-visible [&_.recharts-tooltip-wrapper]:z-50", className)}>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         {action && <CardAction className="text-xs text-muted-foreground">{action}</CardAction>}
