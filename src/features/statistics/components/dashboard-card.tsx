@@ -19,7 +19,7 @@ export function DashboardCard({
   children: ReactNode;
 }) {
   return (
-    <Card size="sm" className={cn("min-h-0", className)}>
+    <Card size="sm" className={cn("min-h-0 overflow-visible [&_.recharts-tooltip-wrapper]:z-50", className)}>
       <CardHeader>
         <CardTitle className="flex items-center gap-1.5">
           {title}

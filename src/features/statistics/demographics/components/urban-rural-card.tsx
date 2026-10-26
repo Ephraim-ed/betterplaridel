@@ -46,53 +46,47 @@ export function UrbanRuralCard({ barangay }: { barangay?: Barangay }) {
         </span>
       }
     >
-      <div className="flex flex-1 flex-col justify-between gap-2">
-        <dl className="space-y-1.5">
-          {urbanRural.map((k) => {
-            const dimmed = selectedKind && selectedKind !== k.kind;
-            return (
-              <div
-                key={k.kind}
-                className={`flex items-center justify-between gap-3 rounded-lg border-l-4 bg-muted/40 px-2.5 py-1 transition-opacity ${dimmed ? "opacity-40" : ""}`}
-                style={{ borderLeftColor: kinds[k.kind].color }}
-              >
-                <div>
-                  <dt className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                    {kinds[k.kind].label}
-                    {selectedKind === k.kind && (
-                      <span className="rounded-full bg-brand px-1.5 text-[10px] font-medium text-white">
-                        {barangay?.name}
-                      </span>
-                    )}
-                  </dt>
-                  <dd className="text-xl leading-tight font-semibold tracking-tight">
-                    <RollingNumber value={k.barangays} />
-                    <span className="ml-1 text-xs font-normal text-muted-foreground">
-                      of {barangays.length} barangays
-                    </span>
-                  </dd>
-                </div>
-                <dd className="text-right text-xs text-muted-foreground tabular-nums">
-                  <span className="block text-sm font-medium text-foreground">
-                    {fmt.percent(k.residents / totalResidents)}
-                  </span>
-                  {fmt.number(k.residents)} residents
-                </dd>
-              </div>
-            );
-          })}
-        </dl>
-        <div className="space-y-1">
-          <ShareBar
-            label="Barangays"
-            values={{ urban: urbanRural[0].barangays, rural: urbanRural[1].barangays }}
-          />
-          <ShareBar
-            label="Residents"
-            values={{ urban: urbanRural[0].residents, rural: urbanRural[1].residents }}
-          />
-        </div>
-      </div>
+      <StatBody
+        value={
+          barangay ? (
+            <span className="flex items-center gap-2">
+              <Swatch kind={kind.kind} />
+              {config[kind.kind].label}
+            </span>
+          ) : (
+            <>
+              <RollingNumber value={urban.barangays} /> of {barangays.length}
+            </>
+          )
+        }
+        notes={
+          barangay ? (
+            <p>
+              One of Plaridel&apos;s {kind.barangays} {kind.kind} barangays
+            </p>
+          ) : (
+            <p>barangays are urban, home to {fmt.percent(urban.residents / totalResidents)} of residents</p>
+          )
+        }
+        side={
+          <div className="flex h-full flex-col">
+            {barangay && <p className="text-xs text-muted-foreground">Across Plaridel</p>}
+            <ChartContainer config={config} className="aspect-auto min-h-0 w-full flex-1">
+              <BarChart data={rows} layout="vertical" stackOffset="expand" margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+                <XAxis type="number" hide />
+                <YAxis type="category" dataKey="row" tickLine={false} axisLine={false} width={62} fontSize={11} />
+                <ChartTooltip cursor={false} content={<ChartTooltipContent hideIndicator />} />
+                <Bar dataKey="urban" stackId="class" fill="var(--color-urban)" stroke="var(--card)" strokeWidth={2} maxBarSize={22} radius={[4, 0, 0, 4]}>
+                  <LabelList dataKey="urban" content={segmentLabel(text("urban"), "#ffffff")} />
+                </Bar>
+                <Bar dataKey="rural" stackId="class" fill="var(--color-rural)" stroke="var(--card)" strokeWidth={2} maxBarSize={22} radius={[0, 4, 4, 0]}>
+                  <LabelList dataKey="rural" content={segmentLabel(text("rural"), "#0f172a")} />
+                </Bar>
+              </BarChart>
+            </ChartContainer>
+          </div>
+        }
+      />
     </DashboardCard>
   );
 }
