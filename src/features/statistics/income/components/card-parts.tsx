@@ -39,7 +39,7 @@ export function ShareStrip({ segments, named = segments.length }: { segments: Se
           </li>
         ))}
       </ul>
-      <div aria-hidden className="-mx-(--card-spacing) -mb-(--card-spacing) mt-2.5 flex h-2.5 gap-px">
+      <div aria-hidden className="-mx-(--card-spacing) -mb-(--card-spacing) mt-2.5 flex h-2.5 gap-px overflow-hidden rounded-b-xl">
         {segments.map((s, i) => (
           <motion.div
             key={s.key}

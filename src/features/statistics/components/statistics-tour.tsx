@@ -66,12 +66,12 @@ export function StatisticsTour({ id, steps }: { id: string; steps: readonly Tour
             (() => {
               const Graphic = tourGraphics[step.graphic];
               return (
-                <div key={index} className="mb-4 overflow-hidden rounded-xl bg-brand/5 ring-1 ring-brand/15">
+                <div key={`g${index}`} className="mb-4 overflow-hidden rounded-xl bg-brand/5 ring-1 ring-brand/15">
                   <Graphic />
                 </div>
               );
             })()}
-          <Dialog.Title key={index} className="animate-in text-lg font-semibold tracking-tight fade-in-0 slide-in-from-right-2">
+          <Dialog.Title key={`t${index}`} className="animate-in text-lg font-semibold tracking-tight fade-in-0 slide-in-from-right-2">
             {step.title}
           </Dialog.Title>
           <Dialog.Description key={`d${index}`} className="mt-2 animate-in text-sm leading-relaxed text-muted-foreground fade-in-0 slide-in-from-right-2">

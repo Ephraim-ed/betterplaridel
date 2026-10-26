@@ -58,7 +58,7 @@ export function BarangayMap({
   };
 
   return (
-    <Card size="sm" className={cn("min-h-0 ring-0", className)}>
+    <Card size="sm" className={cn("min-h-0 overflow-visible ring-0", className)}>
       <CardHeader>
         <CardTitle>Geography</CardTitle>
         {selected && (
