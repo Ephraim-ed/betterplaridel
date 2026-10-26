@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 import { densityBreaks, densityClass, densityRamp } from "../demographics/colors";
 import { barangayBySlug, barangays, density, fmt, LATEST } from "../demographics/data";
 import { barangayShapes, MAP_SIZE } from "../demographics/map";
+import { incomeColors, sourceColors } from "../income/colors";
+import { bulacan, localSources, nationwide, peso, percent, plaridel, selfReliance, totalIncome } from "../income/data";
 
 // Small illustrations for the quick tour, one per step. Drawn in the dashboard's own colors with plain SVG.
 const BRAND = "#047857";
@@ -207,5 +209,119 @@ function Indicators() {
   );
 }
 
-export const tourGraphics = { overview: Overview, pick: Pick, legend: Legend, charts: Charts, cmci: Cmci, scores: Scores, pillars: Pillars, indicators: Indicators } as const;
+function IncomeSplit() {
+  const total = totalIncome(plaridel);
+  const parts = [
+    { label: "Raised locally", value: plaridel.local, color: incomeColors.local },
+    { label: "National allotment", value: plaridel.nta, color: incomeColors.nta },
+    { label: "", value: plaridel.interest + plaridel.otherShares, color: incomeColors.interest },
+  ];
+  let x = 16;
+  return (
+    <Frame label={`Plaridel's ${peso.millions(total)} yearly income, split into money raised locally and the national allotment`}>
+      <g {...pop(0)}>
+        <text x={16} y={30} fontSize={20} fontWeight={700} className="fill-foreground">
+          {peso.millions(total)}
+        </text>
+      </g>
+      <text x={16} y={44} fontSize={9} className="fill-muted-foreground">
+        a year, counted as regular income
+      </text>
+      {parts.map((p, i) => {
+        const w = (p.value / total) * 288;
+        const at = x;
+        x += w;
+        return (
+          <g key={i} {...pop(i + 1)}>
+            <rect x={at} y={56} width={Math.max(w - 1, 1)} height={22} rx={3} fill={p.color} />
+            {p.label && (
+              <text x={at} y={94} fontSize={9} className="fill-muted-foreground">
+                {p.label} <tspan className="fill-foreground" fontWeight={600}>{percent(p.value / total, 0)}</tspan>
+              </text>
+            )}
+          </g>
+        );
+      })}
+    </Frame>
+  );
+}
+
+function Reliance() {
+  const max = Math.ceil(Math.max(...bulacan.map(selfReliance)) * 10) / 10;
+  const at = (n: number) => 20 + (n / max) * 280;
+  return (
+    <Frame label="Bulacan municipalities on a self-reliance scale, with Plaridel and the national median marked">
+      <path d="M20 62 H300" className="stroke-border" strokeWidth={1.5} />
+      <g {...pop(0)}>
+        <rect x={at(nationwide.medianSelfReliance) - 1} y={44} width={2.5} height={36} rx={1} fill={YELLOW} />
+        <text x={at(nationwide.medianSelfReliance)} y={96} fontSize={9} textAnchor="middle" className="fill-muted-foreground">
+          National median {percent(nationwide.medianSelfReliance)}
+        </text>
+      </g>
+      {bulacan
+        .filter((l) => l !== plaridel)
+        .map((l, i) => (
+          <g key={l.name} {...pop(1 + i / 4)}>
+            <circle cx={at(selfReliance(l))} cy={62} r={4} className="fill-slate-400/50" />
+          </g>
+        ))}
+      <g {...pop(6)}>
+        <circle cx={at(selfReliance(plaridel))} cy={62} r={8} fill={BRAND} className="stroke-card" strokeWidth={3} />
+        <text x={at(selfReliance(plaridel))} y={38} fontSize={10} fontWeight={600} textAnchor="middle" className="fill-foreground">
+          Plaridel {percent(selfReliance(plaridel))}
+        </text>
+      </g>
+      <text x={20} y={20} fontSize={9} className="fill-muted-foreground">Share of income raised locally</text>
+    </Frame>
+  );
+}
+
+function Sources() {
+  const rows = [
+    { label: "National Tax Allotment", value: plaridel.nta, color: incomeColors.nta },
+    ...[...localSources]
+      .sort((a, b) => b.amount - a.amount)
+      .slice(0, 3)
+      .map((s) => ({ label: s.label, value: s.amount, color: sourceColors[s.key] })),
+  ];
+  return (
+    <Frame label="Income sources as bars on one scale, each with an info icon">
+      {rows.map((r, i) => (
+        <g key={r.label} {...pop(i)}>
+          <text x={16} y={22 + i * 24} fontSize={9} className="fill-foreground">{r.label}</text>
+          <circle cx={128} cy={19 + i * 24} r={5} className="fill-none stroke-muted-foreground/60" />
+          <text x={128} y={19.5 + i * 24} fontSize={7} fontWeight={600} textAnchor="middle" dominantBaseline="central" className="fill-muted-foreground">i</text>
+          <rect x={142} y={13 + i * 24} width={(r.value / plaridel.nta) * 120} height={11} rx={3} fill={r.color} />
+          <text x={304} y={22 + i * 24} fontSize={9} textAnchor="end" className="fill-muted-foreground">{peso.millions(r.value)}</text>
+        </g>
+      ))}
+    </Frame>
+  );
+}
+
+function Compare() {
+  const rows = [...bulacan.slice(0, 4), plaridel];
+  const max = totalIncome(bulacan[0]);
+  return (
+    <Frame label="Bulacan municipalities as bars split into local money and the national allotment, with Plaridel highlighted">
+      {rows.map((l, i) => {
+        const w = (totalIncome(l) / max) * 200;
+        const local = (l.local / totalIncome(l)) * w;
+        const isPlaridel = l === plaridel;
+        return (
+          <g key={l.name} {...pop(i)}>
+            {isPlaridel && <rect x={8} y={8 + i * 20} width={304} height={18} rx={4} className="fill-brand/10" />}
+            <text x={16} y={20.5 + i * 20} fontSize={9} fontWeight={isPlaridel ? 600 : 400} className={isPlaridel ? "fill-foreground" : "fill-muted-foreground"}>
+              {l.name}
+            </text>
+            <rect x={96} y={12 + i * 20} width={local} height={10} rx={2} fill={incomeColors.local} />
+            <rect x={96 + local + 1} y={12 + i * 20} width={Math.max(w - local - 1, 1)} height={10} rx={2} fill={incomeColors.nta} />
+          </g>
+        );
+      })}
+    </Frame>
+  );
+}
+
+export const tourGraphics = { overview: Overview, pick: Pick, legend: Legend, charts: Charts, cmci: Cmci, scores: Scores, pillars: Pillars, indicators: Indicators, income: IncomeSplit, reliance: Reliance, sources: Sources, compare: Compare } as const;
 export type TourGraphic = keyof typeof tourGraphics;
