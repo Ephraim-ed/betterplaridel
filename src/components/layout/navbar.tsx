@@ -99,10 +99,13 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-line bg-background/80 backdrop-blur">
       <nav className="container-page flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 font-semibold tracking-tight">
-          <span className="grid size-8 place-items-center rounded-lg bg-brand text-sm font-bold text-white">
-            {site.name.charAt(0)}
+          <img src="/betterplaridel-symbol.svg" alt="" aria-hidden className="h-8 w-auto" />
+          <span className="flex flex-col items-end text-brand">
+            <span className="text-xl leading-none font-extrabold tracking-[-0.04em]">
+              <span className="font-medium">Better</span>Plaridel
+            </span>
+            <span className="-mt-0.5 font-mono text-[0.6rem] leading-none font-medium text-brand/70">.org</span>
           </span>
-          {site.name}
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
