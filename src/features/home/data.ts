@@ -2,17 +2,21 @@ import { FileCheck } from "@/components/animate-ui/icons/file-check";
 import { Route } from "@/components/animate-ui/icons/route";
 import { Wallet } from "@/components/animate-ui/icons/wallet";
 import { fmt, LATEST, municipality } from "@/features/statistics/demographics/data";
-import { site } from "@/site.config";
 
 // Text for the home page. Anything marked "TODO: verify" is a placeholder.
 
 export const hero = {
-  eyebrow: "Para sa mga Plaridelenyo",
-  title: "Everything you need from your town, in one place",
-  subtitle:
-    "Find government services, emergency hotlines and the latest news in Plaridel — without the guesswork or the long lines.",
-  primaryCta: site.primaryCta,
-  secondaryCta: { label: "Emergency hotlines", to: "/hotlines" },
+  eyebrow: "Municipality of Plaridel",
+  // The headline's second word slides between these, in turn.
+  title: { lead: "A", words: ["clearer", "better"], rest: "way to find Plaridel government information." },
+  subtitle: "Browse public services, offices and town statistics with the source always in view.",
+  // The licence requires crediting the photographer and linking the licence; the file page does both.
+  photo: {
+    src: "/images/plaridel-church.jpg",
+    caption: "St. James the Apostle Parish (Quingua Church)",
+    credit: "Zarate123, CC BY-SA 4.0",
+    source: "https://commons.wikimedia.org/wiki/File:Saint_James_the_Greater_Church_Bulacan_Plaridel_05.jpg",
+  },
 } as const;
 
 // TODO: verify — check the latest PSA census and municipal records.

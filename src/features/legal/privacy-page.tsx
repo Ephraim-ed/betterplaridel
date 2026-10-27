@@ -17,6 +17,11 @@ export function PrivacyPage() {
           Your browser keeps a small note once you&apos;ve seen the quick tour on a Statistics page, so it doesn&apos;t
           open again. It stays on your device and is never sent to us. Clearing your browser&apos;s site data removes it.
         </p>
+        <h2>Weather and exchange rates</h2>
+        <p>
+          The weather and exchange rates at the top of each page come from Open-Meteo and Frankfurter. Your browser asks
+          them directly, so like any website you visit they see your IP address. Nothing else is sent to them.
+        </p>
         <h2>Server logs</h2>
         {/* TODO: verify — name the hosting provider once it's decided. */}
         <p>
