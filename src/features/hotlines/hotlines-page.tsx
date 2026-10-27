@@ -10,8 +10,8 @@ import { hotlineGroups, moreHotlinesUrl, officialEmail } from "./data";
 // Page sections in order; the Municipal Hall directory sits right after Emergency.
 const sections = [hotlineGroups[0], { id: "directory", title: "Municipal Hall" }, ...hotlineGroups.slice(1)];
 
-// Distance from the top of the window to just below the sticky search bar.
-const SPY_OFFSET = 220;
+// Distance from the top of the window to just below the sticky search bar (under the 40px scrolled navbar).
+const SPY_OFFSET = 196;
 
 export function HotlinesPage() {
   const [query, setQuery] = useState("");
@@ -57,7 +57,8 @@ export function HotlinesPage() {
         subtitle="Numbers every Plaridelenyo can call. In a life-threatening emergency, call 911."
       />
       <section className="container-page pb-24">
-        <div className="sticky top-16 z-10 -mx-4 grid gap-4 border-b border-line bg-background/80 px-4 py-4 backdrop-blur">
+        {/* Sticks just below the navbar, which is 40px tall once the page is scrolled. */}
+        <div className="sticky top-10 z-10 -mx-4 grid gap-4 border-b border-line bg-background/80 px-4 py-4 backdrop-blur">
           <Input
             type="search"
             value={query}
@@ -93,7 +94,7 @@ export function HotlinesPage() {
             <Fragment key={g.id}>
               <div
                 id={g.id}
-                className="mt-10 scroll-mt-48"
+                className="mt-10 scroll-mt-44"
               >
                 <h2 className={`text-2xl font-bold tracking-tight ${emergency ? "text-red-600" : ""}`}>{g.title}</h2>
                 <p className="mt-1 text-muted-foreground">{g.description}</p>

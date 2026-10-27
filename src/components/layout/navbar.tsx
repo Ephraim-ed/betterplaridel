@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { useState, useSyncExternalStore } from "react";
+import { Link, useRouterState } from "@tanstack/react-router";
 import {
   ChartColumnIcon,
   ChevronDownIcon,
@@ -141,53 +141,94 @@ function MobileNav({ onNavigate }: { onNavigate: () => void }) {
   });
 }
 
+// Past this many pixels the navbar shrinks into its compact, floating form.
+const SCROLL_THRESHOLD = 16;
+
+function subscribeToScroll(onChange: () => void) {
+  window.addEventListener("scroll", onChange, { passive: true });
+  return () => window.removeEventListener("scroll", onChange);
+}
+
+function useScrolled() {
+  return useSyncExternalStore(subscribeToScroll, () => window.scrollY > SCROLL_THRESHOLD, () => false);
+}
+
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const scrolled = useScrolled();
+  const home = useRouterState({ select: (state) => state.location.pathname === "/" });
 
+  // At the top of a page the bar is tall and see-through; once scrolled it shrinks to half the height, solid.
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-background/80 backdrop-blur">
-      <nav className="container-page flex h-16 items-center justify-between gap-4">
-        <Link to="/" className="shrink-0">
-          <BrandLogo />
-        </Link>
-
-        <div className="hidden items-center gap-1 lg:flex">
-          <DesktopNav />
-        </div>
-
-        <Button asChild className="hidden h-9 rounded-full px-4 lg:inline-flex">
-          <Link to={site.primaryCta.to} hash={site.primaryCta.hash}>
-            {site.primaryCta.label}
+    <>
+      {/* The header is fixed, so its changing size never shifts the page. This holds its place on every page but
+          the home page, where the hero sits underneath it. */}
+      {!home && <div aria-hidden className="h-20" />}
+      <header
+        className={cn(
+          "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow] duration-300 motion-reduce:transition-none",
+          scrolled && "bg-background/85 shadow-xs shadow-black/3 backdrop-blur-md",
+        )}
+      >
+        <nav
+          className={cn(
+            "container-page flex items-center justify-between gap-4 transition-[height] duration-300 ease-out motion-reduce:transition-none",
+            scrolled ? "h-10" : "h-20",
+          )}
+        >
+          <Link to="/" aria-label={`${site.name} home`} className="shrink-0">
+            <BrandLogo large={!scrolled} collapsed={scrolled} intro />
           </Link>
-        </Button>
 
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild>
-            <Button variant="outline" size="icon-lg" className="lg:hidden" aria-label="Open menu">
-              {/* The menu icon morphs into an X while the sheet is open. */}
-              <Menu animate={open} />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-80 max-w-[85vw]">
-            <SheetHeader className="border-b border-line">
-              <SheetTitle className="sr-only">Menu</SheetTitle>
-              <Link to="/" onClick={() => setOpen(false)} className="w-fit">
-                <BrandLogo />
-              </Link>
-            </SheetHeader>
-            <div className="flex flex-col gap-1 overflow-y-auto px-3 py-2">
-              <MobileNav onNavigate={() => setOpen(false)} />
-            </div>
-            <SheetFooter className="border-t border-line">
-              <Button asChild size="lg" className="w-full rounded-full">
-                <Link to={site.primaryCta.to} hash={site.primaryCta.hash} onClick={() => setOpen(false)}>
-                  {site.primaryCta.label}
-                </Link>
+          <div className="hidden items-center gap-1 lg:flex">
+            <DesktopNav />
+          </div>
+
+          <Button
+            asChild
+            className={cn(
+              "hidden rounded-full transition-all duration-300 lg:inline-flex",
+              scrolled ? "h-7 px-3 text-xs" : "h-9 px-4",
+            )}
+          >
+            <Link to={site.primaryCta.to} hash={site.primaryCta.hash}>
+              {site.primaryCta.label}
+            </Link>
+          </Button>
+
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild>
+              <Button
+                variant="outline"
+                size="icon-lg"
+                className={cn("rounded-full transition-all duration-300 lg:hidden", scrolled && "size-8")}
+                aria-label="Open menu"
+              >
+                {/* The menu icon morphs into an X while the sheet is open. */}
+                <Menu animate={open} />
               </Button>
-            </SheetFooter>
-          </SheetContent>
-        </Sheet>
-      </nav>
-    </header>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-80 max-w-[85vw]">
+              <SheetHeader className="border-b border-line">
+                <SheetTitle className="sr-only">Menu</SheetTitle>
+                <Link to="/" onClick={() => setOpen(false)} className="w-fit">
+                  <BrandLogo />
+                </Link>
+              </SheetHeader>
+              <div className="flex flex-col gap-1 overflow-y-auto px-3 py-2">
+                <MobileNav onNavigate={() => setOpen(false)} />
+              </div>
+              <SheetFooter className="border-t border-line">
+                <Button asChild size="lg" className="w-full rounded-full">
+                  <Link to={site.primaryCta.to} hash={site.primaryCta.hash} onClick={() => setOpen(false)}>
+                    {site.primaryCta.label}
+                  </Link>
+                </Button>
+              </SheetFooter>
+            </SheetContent>
+          </Sheet>
+        </nav>
+      </header>
+    </>
   );
 }

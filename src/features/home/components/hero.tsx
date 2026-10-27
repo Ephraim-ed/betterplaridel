@@ -12,7 +12,8 @@ export function Hero() {
         aria-hidden
         className="pointer-events-none absolute inset-x-0 -top-40 -z-10 mx-auto h-[36rem] max-w-5xl rounded-full bg-brand/20 blur-3xl"
       />
-      <div className="container-page py-24 text-center sm:py-32">
+      {/* The extra top padding clears the navbar, which sits over the hero on the home page. */}
+      <div className="container-page pt-44 pb-24 text-center sm:pt-52 sm:pb-32">
         <span className="inline-flex rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-muted-foreground">
           {hero.eyebrow}
         </span>
