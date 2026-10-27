@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useRef, useState, type MouseEvent } from "react";
+import { getRouteApi } from "@tanstack/react-router";
 import { Input } from "@/components/ui/input";
 import { PageHeader } from "@/components/shared/page-header";
 import { chipClass } from "@/components/shared/chip";
@@ -13,8 +14,11 @@ const sections = [hotlineGroups[0], { id: "directory", title: "Municipal Hall" }
 // Distance from the top of the window to just below the sticky search bar (under the 40px scrolled navbar).
 const SPY_OFFSET = 196;
 
+const route = getRouteApi("/hotlines");
+
 export function HotlinesPage() {
-  const [query, setQuery] = useState("");
+  const { q: initialQuery } = route.useSearch();
+  const [query, setQuery] = useState(initialQuery ?? "");
   const q = query.trim().toLowerCase();
 
   const groups = hotlineGroups

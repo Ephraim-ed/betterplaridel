@@ -2,7 +2,8 @@ import { stats } from "../data";
 
 export function Stats() {
   return (
-    <section className="border-y border-line bg-surface">
+    // The hero's scroll button lands here, just below the scrolled navbar.
+    <section id="overview" className="scroll-mt-10 border-y border-line bg-surface">
       <dl className="container-page grid grid-cols-2 gap-8 py-12 text-center md:grid-cols-4">
         {stats.map((s) => (
           <div key={s.label} className="flex flex-col-reverse">

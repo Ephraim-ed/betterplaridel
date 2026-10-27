@@ -5,6 +5,10 @@ import { HotlinesPage } from "@/features/hotlines/hotlines-page";
 export const hotlinesRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/hotlines",
+  // ?q= prefills the search, e.g. from the home page's search box.
+  validateSearch: (search: Record<string, unknown>): { q?: string } => ({
+    q: typeof search.q === "string" ? search.q : undefined,
+  }),
   component: HotlinesPage,
 });
 

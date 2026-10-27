@@ -16,6 +16,7 @@ import {
 import { cn } from "cn";
 import { Menu } from "@/components/animate-ui/icons/menu";
 import { BrandLogo } from "@/components/shared/brand-logo";
+import { TopBar } from "@/components/layout/top-bar";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { site } from "@/site.config";
@@ -158,18 +159,33 @@ export function Navbar() {
   const scrolled = useScrolled();
   const home = useRouterState({ select: (state) => state.location.pathname === "/" });
 
-  // At the top of a page the bar is tall and see-through; once scrolled it shrinks to half the height, solid.
+  // At the top of a page the bar is tall and see-through under the top bar; once scrolled the top bar folds away
+  // and the bar shrinks to half the height, solid.
   return (
     <>
-      {/* The header is fixed, so its changing size never shifts the page. This holds its place on every page but
-          the home page, where the hero sits underneath it. */}
-      {!home && <div aria-hidden className="h-20" />}
+      {/* The header is fixed, so its changing size never shifts the page. This holds its place (top bar + bar) on
+          every page but the home page, where the hero sits underneath it. */}
+      {!home && <div aria-hidden className="h-28" />}
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow] duration-300 motion-reduce:transition-none",
           scrolled && "bg-background/85 shadow-xs shadow-black/3 backdrop-blur-md",
         )}
       >
+        {/* A one-row grid folds smoothly from the top bar's height to nothing. */}
+        <div
+          className={cn(
+            "grid transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none",
+            scrolled ? "grid-rows-[0fr]" : "grid-rows-[1fr]",
+          )}
+          inert={scrolled}
+        >
+          <div className="overflow-hidden">
+            <div className="h-8 border-b border-line/60">
+              <TopBar />
+            </div>
+          </div>
+        </div>
         <nav
           className={cn(
             "container-page flex items-center justify-between gap-4 transition-[height] duration-300 ease-out motion-reduce:transition-none",
