@@ -1,7 +1,7 @@
 import { FileCheck } from "@/components/animate-ui/icons/file-check";
 import { Route } from "@/components/animate-ui/icons/route";
 import { Wallet } from "@/components/animate-ui/icons/wallet";
-import { fmt, LATEST, municipality } from "@/features/statistics/demographics/data";
+import { fmt, LATEST, municipality } from "@/features/statistics/demographics/demographics-data";
 
 // Text for the home page. Anything marked "TODO: verify" is a placeholder.
 

@@ -1,0 +1,27 @@
+{
+  "source": {
+    "label": "Philippine Statistics Authority — PSGC, Plaridel barangays",
+    "url": "https://psa.gov.ph/classification/psgc/barangays/0301417000",
+    "notes": "Population from the 2015 Census of Population (POPCEN) and the 2020 Census of Population and Housing (CPH). Urban/rural classes are PSA's, based on the 2020 CPH."
+  },
+  "censusYears": [
+    2015,
+    2020
+  ],
+  "latest": 2020,
+  "censusNames": {
+    "2015": "2015 Census of Population",
+    "2020": "2020 Census of Population and Housing"
+  },
+  "municipality": {
+    "name": "Plaridel",
+    "psgc": "0301417000",
+    "incomeClass": "1st",
+    "population": {
+      "2015": 107805,
+      "2020": 114432
+    },
+    "landAreaKm2": 32.44,
+    "sex": null
+  }
+}

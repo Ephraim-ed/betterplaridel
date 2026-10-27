@@ -22,7 +22,7 @@ import {
   LATEST,
   rankByPopulation,
   type Barangay,
-} from "../data";
+} from "../demographics-data";
 
 const config = { population: { label: "Residents" } } satisfies ChartConfig;
 

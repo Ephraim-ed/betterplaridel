@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { motion } from "motion/react";
-import { percent } from "../data";
+import { percent } from "../income-data";
 
 // The card's figure, centered in the space above its strip.
 export function CenteredStat({ value, lines }: { value: ReactNode; lines: ReactNode[] }) {

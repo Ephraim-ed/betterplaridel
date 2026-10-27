@@ -1,8 +1,17 @@
 {
-  "source": {
-    "label": "DILG Bulacan — LGU profile of Plaridel",
-    "url": "https://www.lgrcbulacan.region3.dilg.gov.ph/about-us/partners-and-stakeholders/local-government-units/plaridel"
-  },
+  "sources": [
+    {
+      "label": "DILG Bulacan — LGU profile of Plaridel",
+      "url": "https://www.lgrcbulacan.region3.dilg.gov.ph/about-us/partners-and-stakeholders/local-government-units/plaridel",
+      "notes": "Barangay officials. Obvious spacing typos were fixed (e.g. \"Sam uel\" → \"Samuel\")."
+    },
+    {
+      "label": "Municipal Hall telephone directory; the Vice Mayor's Facebook page",
+      "url": "https://www.facebook.com/mhelgatduladeleon/",
+      "retrieved": "2026-10-27",
+      "notes": "Contacts."
+    }
+  ],
   "contacts": {
     "lgu": [
       {
@@ -43,7 +52,7 @@
   },
   "barangays": [
     {
-      "barangay": "Agnaya",
+      "psgc": "0301417001",
       "captain": "Maximo V. Lazaro",
       "secretary": "John F. Bigornia",
       "kagawad": [
@@ -68,7 +77,7 @@
       ]
     },
     {
-      "barangay": "Bagong Silang",
+      "psgc": "0301417002",
       "captain": "Samuel P. Dayao",
       "secretary": "Mariel J. Ilao",
       "kagawad": [
@@ -93,7 +102,7 @@
       ]
     },
     {
-      "barangay": "Banga I",
+      "psgc": "0301417003",
       "captain": "Edwin M. De Dios",
       "secretary": "Rechildo E. Mago",
       "kagawad": [
@@ -118,7 +127,7 @@
       ]
     },
     {
-      "barangay": "Banga II",
+      "psgc": "0301417004",
       "captain": "Jaymon F. Punzalan",
       "secretary": "Maria Noridy B. Apostol",
       "kagawad": [
@@ -143,7 +152,7 @@
       ]
     },
     {
-      "barangay": "Bintog",
+      "psgc": "0301417005",
       "captain": "Raymond S. Bell",
       "secretary": "Khenneth M. Santiago",
       "kagawad": [
@@ -168,7 +177,7 @@
       ]
     },
     {
-      "barangay": "Bulihan",
+      "psgc": "0301417006",
       "captain": "Esperanza S. Garcia",
       "secretary": "Maxima S. Hipolito",
       "kagawad": [
@@ -193,7 +202,7 @@
       ]
     },
     {
-      "barangay": "Culianin",
+      "psgc": "0301417007",
       "captain": "Edwin S. Reyes",
       "secretary": "Catherine T. Dela Cruz",
       "kagawad": [
@@ -218,7 +227,7 @@
       ]
     },
     {
-      "barangay": "Dampol",
+      "psgc": "0301417008",
       "captain": "Feliciano T. De Robles",
       "secretary": "Maricel S. Bagan",
       "kagawad": [
@@ -243,7 +252,7 @@
       ]
     },
     {
-      "barangay": "Lagundi",
+      "psgc": "0301417010",
       "captain": "Rolando E. Dela Cruz",
       "secretary": "Maria Melliza R. Dela Cruz",
       "kagawad": [
@@ -267,7 +276,7 @@
       ]
     },
     {
-      "barangay": "Lalangan",
+      "psgc": "0301417011",
       "captain": "Danilo M. Tayao",
       "secretary": "Maria Carolina R. Galvez",
       "kagawad": [
@@ -292,7 +301,7 @@
       ]
     },
     {
-      "barangay": "Lumang Bayan",
+      "psgc": "0301417012",
       "captain": "Leoncio C. Ramos",
       "secretary": "Roxanne R. Flores",
       "kagawad": [
@@ -317,7 +326,7 @@
       ]
     },
     {
-      "barangay": "Parulan",
+      "psgc": "0301417014",
       "captain": "Juanesto R. Sayo",
       "secretary": "Rodney Ashley D.C. Esteban",
       "kagawad": [
@@ -342,7 +351,7 @@
       ]
     },
     {
-      "barangay": "Poblacion",
+      "psgc": "0301417015",
       "captain": "Ruel C. Marquez",
       "secretary": "Elenita A. Velasco",
       "kagawad": [
@@ -366,7 +375,7 @@
       ]
     },
     {
-      "barangay": "Rueda",
+      "psgc": "0301417016",
       "captain": "Butch R. Bastes",
       "secretary": "Rosene C. Alcuizar",
       "kagawad": [
@@ -391,7 +400,7 @@
       ]
     },
     {
-      "barangay": "San Jose",
+      "psgc": "0301417017",
       "captain": "Pedro Mariano",
       "secretary": "Ma. Christina V. Rogando",
       "kagawad": [
@@ -415,7 +424,7 @@
       ]
     },
     {
-      "barangay": "Santa Ines",
+      "psgc": "0301417018",
       "captain": "Gary S. Constantino",
       "secretary": "Rodrigo N. Vegas",
       "kagawad": [
@@ -440,7 +449,7 @@
       ]
     },
     {
-      "barangay": "Santo Niño",
+      "psgc": "0301417019",
       "captain": "Romeo J. Dela Cruz",
       "secretary": "Michael Robert B. Leonardo",
       "kagawad": [
@@ -465,7 +474,7 @@
       ]
     },
     {
-      "barangay": "Sipat",
+      "psgc": "0301417020",
       "captain": "Oscar D.C. Gabriel",
       "secretary": "Ross Ann J. Adona",
       "kagawad": [
@@ -490,7 +499,7 @@
       ]
     },
     {
-      "barangay": "Tabang",
+      "psgc": "0301417021",
       "captain": "Cherry Lyn D.C. Preligera",
       "secretary": "Genoveva M. Reyes",
       "kagawad": [

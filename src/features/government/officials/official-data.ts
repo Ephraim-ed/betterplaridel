@@ -1,15 +1,18 @@
 // Current officials of Plaridel, Bulacan, built into the nodes used by the cards, the details modal
 // and the org chart.
-// - Mayor, Vice Mayor and councilors: the winners of the latest election in election-results.json,
+// - Mayor, Vice Mayor and councilors: the winners of the latest election in src/data/elections.json,
 //   the same data as the Election results section.
-// - Barangay officials: official-data.json, copied from the DILG Bulacan LGRC profile of Plaridel
-//   (they aren't in the election data). Obvious spacing typos were fixed (e.g. "Sam uel" → "Samuel").
-// - Contacts: official-data.json. Phone numbers are from the Municipal Hall telephone directory;
+// - Barangay officials: src/data/officials.json, copied from the DILG Bulacan LGRC profile of Plaridel
+//   (they aren't in the election data), keyed by PSGC code. Barangay names come from src/data/barangays.json.
+// - Contacts: src/data/officials.json. Phone numbers are from the Municipal Hall telephone directory;
 //   the Vice Mayor's are as listed on the Vice Mayor's Facebook page.
+import barangayData from "@/data/barangays.json";
+import data from "@/data/officials.json";
 import { elections, type Candidate, type Position } from "../elections/election-data";
-import data from "./official-data.json";
 
-export const SOURCE = data.source;
+// The DILG profile, credited on the Barangays page.
+const [dilg] = data.sources;
+export const SOURCE = { label: dilg.label, url: dilg.url };
 
 const latest = elections[0];
 export const ELECTION_YEAR = latest.year;
@@ -47,7 +50,12 @@ export type OrgNode = {
   elected?: { year: number; party: string | null; votes: number | null };
 };
 
-const { barangays } = data;
+const nameOf = new Map(barangayData.barangays.map((b) => [b.psgc, b.name]));
+const barangays = data.barangays.map((b) => {
+  const barangay = nameOf.get(b.psgc);
+  if (!barangay) throw new Error(`Unknown barangay PSGC in src/data/officials.json: ${b.psgc}`);
+  return { ...b, barangay };
+});
 
 export const orgNodes: OrgNode[] = [
   {

@@ -1,6 +1,0 @@
-// TODO: replace with real announcements.
-export const announcements = [
-  { date: "Oct 2026", tag: "Advisory", title: "Sample announcement title", body: "Short summary of the announcement goes here." },
-  { date: "Oct 2026", tag: "Event", title: "Sample community event", body: "Date, time and venue of the event go here." },
-  { date: "Sep 2026", tag: "Service", title: "Sample service update", body: "Changes to office hours or requirements go here." },
-] as const;

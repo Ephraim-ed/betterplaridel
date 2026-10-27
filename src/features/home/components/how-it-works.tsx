@@ -1,4 +1,4 @@
-import { steps } from "../data";
+import { steps } from "../home-content";
 import { Section } from "@/components/shared/section";
 
 export function HowItWorks() {

@@ -1,7 +1,7 @@
 import { useRouterState } from "@tanstack/react-router";
 import { AnimateIcon } from "@animate-ui/react/icons";
 import { cn } from "cn";
-import { serviceId, services } from "../data";
+import { serviceId, services } from "../services-data";
 import { Section } from "@/components/shared/section";
 
 export function Services() {

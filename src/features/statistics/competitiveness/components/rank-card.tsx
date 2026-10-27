@@ -1,6 +1,6 @@
 import { DashboardCard, StatBody } from "@/features/statistics/components/dashboard-card";
 import { RollingNumber } from "@/features/statistics/components/rolling-number";
-import { category, overall, pillars } from "../data";
+import { category, overall, pillars } from "../competitiveness-data";
 import { ordinalSuffix } from "../format";
 
 const byRank = [...pillars].sort((a, b) => a.rank - b.rank);

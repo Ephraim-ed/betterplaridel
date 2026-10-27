@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/chart";
 import { averageTick } from "@/features/statistics/components/average-tick";
 import { DashboardCard } from "@/features/statistics/components/dashboard-card";
-import { pillars, type Pillar } from "../data";
+import { pillars, type Pillar } from "../competitiveness-data";
 import { indicatorInfo, pillarInfo } from "../info";
 import { colors, ordinalSuffix, score } from "../format";
 import { PlaridelVsAverageLegend } from "./legend";

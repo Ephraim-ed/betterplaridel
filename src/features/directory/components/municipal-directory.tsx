@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { AnimateIcon } from "@animate-ui/react/icons";
 import { PhoneCall } from "@/components/animate-ui/icons/phone-call";
 import { chipClass } from "@/components/shared/chip";
-import { categories, entries, LAST_UPDATED, matchesQuery, TRUNKLINE, type DirectoryCategory } from "../data";
+import { categories, entries, LAST_UPDATED, matchesQuery, TRUNKLINE, type DirectoryCategory } from "../directory-data";
 import { DirectoryCard } from "./directory-card";
 
 // Municipal Hall telephone directory, shown as a section of the Hotlines page.

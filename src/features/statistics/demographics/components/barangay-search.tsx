@@ -1,7 +1,7 @@
 import { useId, useState, type KeyboardEvent } from "react";
 import { Search } from "@/components/animate-ui/icons/search";
 import { Input } from "@/components/ui/input";
-import { barangays, fmt, LATEST, matchesName, type Barangay } from "../data";
+import { barangays, fmt, LATEST, matchesName, type Barangay } from "../demographics-data";
 
 export function BarangaySearch({ onSelect, className = "" }: { onSelect: (b: Barangay) => void; className?: string }) {
   const listId = useId();

@@ -1,7 +1,7 @@
 import { DashboardCard } from "@/features/statistics/components/dashboard-card";
 import { RollingNumber } from "@/features/statistics/components/rolling-number";
 import { sourceColors } from "../colors";
-import { FISCAL_YEAR, localSources, percent, plaridel } from "../data";
+import { FISCAL_YEAR, localSources, percent, plaridel } from "../income-data";
 import { terms } from "../info";
 import { CenteredStat, ShareStrip } from "./card-parts";
 

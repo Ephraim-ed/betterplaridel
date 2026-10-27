@@ -2,8 +2,8 @@ import { useState, type CSSProperties, type KeyboardEvent } from "react";
 import { cn } from "cn";
 import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { densityBreaks, densityClass, densityInk, densityRamp, mapInk } from "../colors";
-import { barangays, density, fmt, LATEST, type Barangay } from "../data";
-import { barangayShapes, LABEL_SIZE, MAP_SIZE } from "../map";
+import { barangays, density, fmt, LATEST, type Barangay } from "../demographics-data";
+import { barangayShapes, LABEL_SIZE, MAP_SIZE } from "../map-data";
 
 // Each shape's bounding box, parsed from its path (paths use absolute M/L/Z commands only).
 const bounds = Object.fromEntries(

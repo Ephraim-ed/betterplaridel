@@ -4,9 +4,9 @@ import { Input } from "@/components/ui/input";
 import { PageHeader } from "@/components/shared/page-header";
 import { chipClass } from "@/components/shared/chip";
 import { MunicipalDirectory } from "@/features/directory/components/municipal-directory";
-import { entries, matchesQuery } from "@/features/directory/data";
+import { entries, matchesQuery } from "@/features/directory/directory-data";
 import { HotlineCard } from "./components/hotline-card";
-import { hotlineGroups, moreHotlinesUrl, officialEmail } from "./data";
+import { hotlineGroups, moreHotlinesUrl, officialEmail } from "./hotlines-data";
 
 // Page sections in order; the Municipal Hall directory sits right after Emergency.
 const sections = [hotlineGroups[0], { id: "directory", title: "Municipal Hall" }, ...hotlineGroups.slice(1)];

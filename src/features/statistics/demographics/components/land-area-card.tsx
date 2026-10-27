@@ -4,7 +4,7 @@ import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 import { DashboardCard } from "@/features/statistics/components/dashboard-card";
 import { RollingNumber } from "@/features/statistics/components/rolling-number";
 import { chartColors } from "../colors";
-import { barangays, density, fmt, LATEST, municipality, type Barangay } from "../data";
+import { barangays, density, fmt, LATEST, municipality, type Barangay } from "../demographics-data";
 
 const config = { areaKm2: { label: "Land area", color: chartColors.accent } } satisfies ChartConfig;
 

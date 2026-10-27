@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { cn } from "cn";
 import { DashboardCard } from "@/features/statistics/components/dashboard-card";
 import { incomeColors } from "../colors";
-import { bulacan, peso, percent, plaridel, selfReliance, totalIncome, type Lgu } from "../data";
+import { bulacan, peso, percent, plaridel, selfReliance, totalIncome, type Lgu } from "../income-data";
 
 type View = "amount" | "share";
 

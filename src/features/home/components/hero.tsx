@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronDownIcon } from "lucide-react";
-import { hero } from "../data";
+import { hero } from "../home-content";
 import { BanigTexture } from "./banig-texture";
 import { PortalSearch } from "./portal-search";
 import { RotatingWord } from "./rotating-word";
