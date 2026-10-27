@@ -4,6 +4,7 @@ import { homeRoute } from "./routes/home";
 import { aboutRoute } from "./routes/about";
 import { hotlinesRoute, contactRedirectRoute } from "./routes/hotlines";
 import { officialsRoute } from "./routes/officials";
+import { privacyRoute, termsRoute } from "./routes/legal";
 import {
   competitivenessRoute,
   demographicsRoute,
@@ -19,6 +20,8 @@ const routeTree = rootRoute.addChildren([
   hotlinesRoute,
   officialsRoute,
   statisticsRoute.addChildren([statisticsIndexRoute, demographicsRoute, competitivenessRoute, incomeRoute]),
+  termsRoute,
+  privacyRoute,
   contactRedirectRoute,
 ]);
 

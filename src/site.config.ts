@@ -36,4 +36,26 @@ export const site = {
     body: "Find the right office or hotline to call — from barangay halls to the Mayor's office.",
     button: { label: "View hotlines", to: "/hotlines" },
   },
+
+  footer: {
+    quickLinks: [
+      { label: "Hotlines", to: "/hotlines" },
+      { label: "Officials", to: "/officials" },
+      { label: "Statistics", to: "/statistics" },
+      { label: "About", to: "/about" },
+      { label: "FAQ", to: "/", hash: "faq" },
+      { label: "Terms of Use", to: "/terms" },
+      { label: "Privacy Policy", to: "/privacy" },
+    ],
+    resources: [
+      { label: "Open Data Philippines", href: "https://data.gov.ph" },
+      { label: "Freedom of Information", href: "https://www.foi.gov.ph" },
+      { label: "BetterGov Open Data", href: "https://data.bettergov.ph" },
+      { label: "PSA", href: "https://psa.gov.ph" },
+      { label: "BLGF Portal", href: "https://blgf.gov.ph" },
+      { label: "CMCI DTI Portal", href: "https://cmci.dti.gov.ph" },
+    ],
+    repo: "https://github.com/kai-dev00/betterplaridel", // TODO: verify this is the main repo
+    betterGov: "https://bettergov.ph",
+  },
 } as const;

@@ -1,7 +1,7 @@
 import { useState, type CSSProperties, type KeyboardEvent } from "react";
 import { cn } from "cn";
 import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { densityBreaks, densityClass, densityInk, densityRamp } from "../colors";
+import { densityBreaks, densityClass, densityInk, densityRamp, mapInk } from "../colors";
 import { barangays, density, fmt, LATEST, type Barangay } from "../data";
 import { barangayShapes, LABEL_SIZE, MAP_SIZE } from "../map";
 
@@ -130,7 +130,7 @@ export function BarangayMap({
                     fontWeight={500}
                     textAnchor="middle"
                     dominantBaseline="central"
-                    fill={faded ? "#0f172a" : densityInk(shadeOf(b))}
+                    fill={faded ? mapInk : densityInk(shadeOf(b))}
                     opacity={faded ? 0.6 : 1}
                     aria-hidden
                     className="pointer-events-none select-none"
@@ -149,11 +149,11 @@ export function BarangayMap({
                 <path
                   d={barangayShapes[hovered.psgc].d}
                   fill="none"
-                  stroke="#0f172a"
-                  strokeWidth={1.5}
+                  strokeWidth={2}
                   strokeLinejoin="round"
                   vectorEffect="non-scaling-stroke"
                   pointerEvents="none"
+                  className="stroke-brand-yellow"
                 />
               )}
               {selected && (
@@ -161,13 +161,12 @@ export function BarangayMap({
                   key={selected.psgc}
                   d={barangayShapes[selected.psgc].d}
                   fill="none"
-                  stroke="#0f172a"
-                  strokeWidth={2.5}
+                  strokeWidth={3}
                   strokeLinejoin="round"
                   vectorEffect="non-scaling-stroke"
                   pointerEvents="none"
                   style={{ animation: "map-outline-in 0.6s ease-out 0.15s backwards" }}
-                  className="motion-reduce:!animate-none"
+                  className="stroke-brand-yellow motion-reduce:!animate-none"
                 />
               )}
               </g>
