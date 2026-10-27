@@ -2,6 +2,8 @@ import { useMemo, useState } from "react";
 import { AnimateIcon } from "@animate-ui/react/icons";
 import { PhoneCall } from "@/components/animate-ui/icons/phone-call";
 import { chipClass } from "@/components/shared/chip";
+import { EmptyState } from "@/components/shared/empty-state";
+import { Button } from "@/components/ui/button";
 import { categories, entries, LAST_UPDATED, matchesQuery, TRUNKLINE, type DirectoryCategory } from "../directory-data";
 import { DirectoryCard } from "./directory-card";
 
@@ -71,9 +73,21 @@ export function MunicipalDirectory({ id, query }: { id?: string; query: string }
 
       {/* Offices */}
       {groups.length === 0 ? (
-        <p className="mt-6 rounded-2xl border border-line p-6 text-center text-muted-foreground">
-          No office matches that search. Call the operator at local 1000.
-        </p>
+        <EmptyState
+          art="no-results"
+          heading="h3"
+          title="No office matches that search"
+          className="mt-6"
+          actions={
+            category !== "all" && (
+              <Button variant="outline" className="rounded-full" onClick={() => setCategory("all")}>
+                Show all offices
+              </Button>
+            )
+          }
+        >
+          Try another category, or call the operator at local 1000.
+        </EmptyState>
       ) : (
         groups.map((g) => (
           <section key={g.id} aria-labelledby={`dir-${g.id}`} className="mt-8">

@@ -15,6 +15,7 @@ import {
   statisticsRoute,
 } from "./routes/statistics";
 import { NotFound } from "./not-found";
+import { ErrorPage } from "./error-page";
 
 const routeTree = rootRoute.addChildren([
   homeRoute,
@@ -34,6 +35,7 @@ export const router = createRouter({
   routeTree,
   defaultPreload: "intent",
   defaultNotFoundComponent: NotFound,
+  defaultErrorComponent: ErrorPage,
   scrollRestoration: true,
 });
 
