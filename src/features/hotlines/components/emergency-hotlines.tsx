@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { AnimateIcon } from "@animate-ui/react/icons";
 import { ArrowRight } from "@/components/animate-ui/icons/arrow-right";
 import { Button } from "@/components/ui/button";
-import { hotlineGroups } from "../data";
+import { hotlineGroups } from "../hotlines-data";
 import { HotlineCard } from "./hotline-card";
 import { Section } from "@/components/shared/section";
 

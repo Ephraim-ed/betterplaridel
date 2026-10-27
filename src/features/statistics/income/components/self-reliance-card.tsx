@@ -3,7 +3,7 @@ import { DashboardCard } from "@/features/statistics/components/dashboard-card";
 import { RollingNumber } from "@/features/statistics/components/rolling-number";
 import { ordinalSuffix } from "@/features/statistics/competitiveness/format";
 import { incomeColors } from "../colors";
-import { bulacan, FISCAL_YEAR, nationwide, percent, plaridel, selfReliance } from "../data";
+import { bulacan, FISCAL_YEAR, nationwide, percent, plaridel, selfReliance } from "../income-data";
 import { terms } from "../info";
 import { CenteredStat } from "./card-parts";
 

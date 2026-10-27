@@ -1,9 +1,9 @@
 import { DashboardCard } from "@/features/statistics/components/dashboard-card";
 import { RollingNumber } from "@/features/statistics/components/rolling-number";
 import { ordinalSuffix } from "@/features/statistics/competitiveness/format";
-import { LATEST, municipality } from "@/features/statistics/demographics/data";
+import { LATEST, municipality } from "@/features/statistics/demographics/demographics-data";
 import { incomeColors } from "../colors";
-import { bulacan, FISCAL_YEAR, nationwide, plaridel, totalIncome } from "../data";
+import { bulacan, FISCAL_YEAR, nationwide, plaridel, totalIncome } from "../income-data";
 import { terms } from "../info";
 import { CenteredStat, ShareStrip } from "./card-parts";
 

@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 import { densityBreaks, densityClass, densityRamp } from "../demographics/colors";
-import { barangayBySlug, barangays, density, fmt, LATEST } from "../demographics/data";
-import { barangayShapes, MAP_SIZE } from "../demographics/map";
+import { barangayBySlug, barangays, density, fmt, LATEST } from "../demographics/demographics-data";
+import { barangayShapes, MAP_SIZE } from "../demographics/map-data";
 import { incomeColors, sourceColors } from "../income/colors";
-import { bulacan, localSources, nationwide, peso, percent, plaridel, selfReliance, totalIncome } from "../income/data";
+import { bulacan, localSources, nationwide, peso, percent, plaridel, selfReliance, totalIncome } from "../income/income-data";
 
 // Small illustrations for the quick tour, one per step. Drawn in the dashboard's own colors with plain SVG.
 const BRAND = "#047857";

@@ -1,9 +1,11 @@
 // Plaridel's local election results (2001–2025), copied from the BetterGov.ph Dynasties API
-// (https://dynasties.bettergov.ph/developers) into election-results.json. Ballot names are title-cased and
-// candidates sorted by votes. After the next election, add that year's results to election-results.json.
-import results from "./election-results.json";
+// (https://dynasties.bettergov.ph/developers). Raw copy: src/data/elections.json. Ballot names are title-cased and
+// candidates sorted by votes. After the next election, add that year's results to src/data/elections.json.
+import data from "@/data/elections.json";
+import { oneOf } from "@/lib/data-checks";
 
-export type Position = "mayor" | "vice-mayor" | "councilor" | "representative" | "board-member";
+const POSITIONS = ["mayor", "vice-mayor", "councilor", "representative", "board-member"] as const;
+export type Position = (typeof POSITIONS)[number];
 
 export type Candidate = {
   name: string; // as printed on the ballot
@@ -24,15 +26,19 @@ export type Contest = {
 
 export type Election = { year: number; contests: Contest[] };
 
-export const elections = results.elections as Election[]; // newest first
+// Newest first.
+export const elections: Election[] = data.elections.map((e) => ({
+  ...e,
+  contests: e.contests.map((c) => ({ ...c, position: oneOf(POSITIONS, c.position, "election position") })),
+}));
 
 // Credits
 export const ELECTIONS_SOURCE = {
-  label: "BetterGov.ph Dynasties",
-  url: "https://dynasties.bettergov.ph/?province=bulacan&town=plaridel",
-  dataset: "Open Halalan (Robert R. Leung)",
-  datasetUrl: "https://robertrleung.github.io/OpenHalalan/",
-  vintage: results.dataVintage,
+  label: data.source.label,
+  url: data.source.url,
+  dataset: data.source.dataset.label,
+  datasetUrl: data.source.dataset.url,
+  vintage: data.source.vintage,
 };
 
 // Municipal seats Plaridel elects on its own, then the district seats it votes on with its neighbors.

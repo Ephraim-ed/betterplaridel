@@ -1,6 +1,6 @@
 import { DashboardCard, StatBody } from "@/features/statistics/components/dashboard-card";
 import { RollingNumber } from "@/features/statistics/components/rolling-number";
-import { bulacan } from "../data";
+import { bulacan } from "../competitiveness-data";
 import { ordinalSuffix, score } from "../format";
 
 const position = bulacan.findIndex((l) => l.name === "Plaridel") + 1;

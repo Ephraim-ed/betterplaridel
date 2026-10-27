@@ -1,7 +1,7 @@
 import { DashboardCard } from "@/features/statistics/components/dashboard-card";
 import { RollingNumber } from "@/features/statistics/components/rolling-number";
 import { chartColors } from "../colors";
-import { barangays, fmt, urbanRural, type Barangay } from "../data";
+import { barangays, fmt, urbanRural, type Barangay } from "../demographics-data";
 
 const kinds = { urban: { label: "Urban", color: chartColors.urban }, rural: { label: "Rural", color: chartColors.rural } };
 const totalResidents = urbanRural.reduce((sum, k) => sum + k.residents, 0);

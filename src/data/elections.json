@@ -1,5 +1,14 @@
 {
-  "dataVintage": "2026-09-14",
+  "source": {
+    "label": "BetterGov.ph Dynasties",
+    "url": "https://dynasties.bettergov.ph/?province=bulacan&town=plaridel",
+    "dataset": {
+      "label": "Open Halalan (Robert R. Leung)",
+      "url": "https://robertrleung.github.io/OpenHalalan/"
+    },
+    "vintage": "2026-09-14",
+    "notes": "Copied from the BetterGov.ph Dynasties API (https://dynasties.bettergov.ph/developers). Ballot names are title-cased and candidates sorted by votes."
+  },
   "elections": [
     {
       "year": 2025,

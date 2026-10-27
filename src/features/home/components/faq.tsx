@@ -1,4 +1,4 @@
-import { faq } from "../data";
+import { faq } from "../home-content";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Section } from "@/components/shared/section";
 

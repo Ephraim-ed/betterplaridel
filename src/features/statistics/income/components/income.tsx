@@ -1,5 +1,5 @@
 import { StatisticsDashboard } from "@/features/statistics/components/statistics-dashboard";
-import { FISCAL_YEAR } from "../data";
+import { FISCAL_YEAR } from "../income-data";
 import { BulacanIncome } from "./bulacan-income";
 import { IncomeBreakdown } from "./income-breakdown";
 import { IncomeCard } from "./income-card";

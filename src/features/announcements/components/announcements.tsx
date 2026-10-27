@@ -1,6 +1,6 @@
 import { Megaphone } from "@/components/animate-ui/icons/megaphone";
 import { Badge } from "@/components/ui/badge";
-import { announcements } from "../data";
+import { announcements } from "../announcements-data";
 import { Section } from "@/components/shared/section";
 
 export function Announcements() {

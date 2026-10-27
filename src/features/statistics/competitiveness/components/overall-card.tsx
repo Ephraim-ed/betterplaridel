@@ -1,6 +1,6 @@
 import { DashboardCard, StatBody } from "@/features/statistics/components/dashboard-card";
 import { RollingNumber } from "@/features/statistics/components/rolling-number";
-import { CMCI_YEAR, overall } from "../data";
+import { CMCI_YEAR, overall } from "../competitiveness-data";
 import { colors, score, signedScore } from "../format";
 
 // Plaridel is the story; its category's average and best are context. Bars all start at zero.

@@ -1,4 +1,4 @@
-import { stats } from "../data";
+import { stats } from "../home-content";
 
 export function Stats() {
   return (

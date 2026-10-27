@@ -1,6 +1,6 @@
 import { getRouteApi } from "@tanstack/react-router";
 import { StatisticsDashboard } from "@/features/statistics/components/statistics-dashboard";
-import { category, CMCI_YEAR, pillars, type Pillar } from "../data";
+import { category, CMCI_YEAR, pillars, type Pillar } from "../competitiveness-data";
 import { ordinalSuffix, score } from "../format";
 import { BulacanCard } from "./bulacan-card";
 import { BulacanRanking } from "./bulacan-ranking";

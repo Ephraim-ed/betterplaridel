@@ -4,7 +4,7 @@ import { ArrowRightIcon, PhoneIcon } from "lucide-react";
 import { cn } from "cn";
 import { Button } from "@/components/ui/button";
 import { site } from "@/site.config";
-import { serviceId, services } from "@/features/services/data";
+import { serviceId, services } from "@/features/services/services-data";
 
 const popular = services.slice(0, 6);
 

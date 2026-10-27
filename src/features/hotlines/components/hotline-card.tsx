@@ -3,17 +3,7 @@ import { Phone } from "@/components/animate-ui/icons/phone";
 import { PhoneCall } from "@/components/animate-ui/icons/phone-call";
 import { Smartphone } from "@/components/animate-ui/icons/smartphone";
 import { formatNumber, tel } from "../format";
-
-// A plain number, or one with a short caption (e.g. "From Globe mobile").
-// `dial` overrides what the phone dials, e.g. "0447940119,1009" for a trunkline + local.
-export type PhoneNumber = string | { number: string; label: string; dial?: string };
-
-export type Hotline = {
-  name: string;
-  number: PhoneNumber; // "TBA" until confirmed; not callable
-  note?: string;
-  otherNumbers?: readonly PhoneNumber[];
-};
+import type { Hotline, PhoneNumber } from "../hotlines-data";
 
 const normalize = (n: PhoneNumber) =>
   typeof n === "string" ? { number: n, label: undefined, dial: undefined } : n;

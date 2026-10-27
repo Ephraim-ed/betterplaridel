@@ -1,6 +1,6 @@
 import { getRouteApi } from "@tanstack/react-router";
 import { StatisticsDashboard } from "@/features/statistics/components/statistics-dashboard";
-import { barangayBySlug, type Barangay } from "../data";
+import { barangayBySlug, type Barangay } from "../demographics-data";
 import { BarangayMap } from "./barangay-map";
 import { BarangaySearch } from "./barangay-search";
 import { GrowthCard } from "./growth-card";

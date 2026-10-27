@@ -1,0 +1,56 @@
+{
+  "source": {
+    "label": "BetterPlaridel editors",
+    "notes": "The first six are the most requested; the home page lists them as \"Popular services\"."
+  },
+  "services": [
+    {
+      "id": "civil-registry",
+      "title": "Civil Registry",
+      "body": "Birth, marriage and death certificates, and late registration.",
+      "icon": "file-text"
+    },
+    {
+      "id": "business-permits",
+      "title": "Business Permits",
+      "body": "New and renewal business permits, and requirements checklist.",
+      "icon": "shopping-bag"
+    },
+    {
+      "id": "cedula",
+      "title": "Cedula",
+      "body": "Community Tax Certificate for employment, permits and transactions.",
+      "icon": "badge-check"
+    },
+    {
+      "id": "real-property-tax",
+      "title": "Real Property Tax",
+      "body": "Amilyar payment schedule, discounts and tax declarations.",
+      "icon": "house"
+    },
+    {
+      "id": "health-services",
+      "title": "Health Services",
+      "body": "Rural Health Unit, vaccinations, check-ups and health programs.",
+      "icon": "heart"
+    },
+    {
+      "id": "social-welfare",
+      "title": "Social Welfare",
+      "body": "MSWDO assistance, senior citizen, PWD and solo parent IDs.",
+      "icon": "users"
+    },
+    {
+      "id": "jobs-peso",
+      "title": "Jobs (PESO)",
+      "body": "Job fairs, local hiring and employment assistance.",
+      "icon": "search"
+    },
+    {
+      "id": "barangay-directory",
+      "title": "Barangay Directory",
+      "body": "Find your barangay hall, officials and contact details.",
+      "icon": "map-pin"
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import { DashboardCard, StatBody } from "@/features/statistics/components/dashbo
 import { FilledBar } from "@/features/statistics/components/filled-bar";
 import { RollingNumber } from "@/features/statistics/components/rolling-number";
 import { chartColors } from "../colors";
-import { CENSUS_YEARS, fmt, LATEST, municipality, rankByPopulation, type Barangay } from "../data";
+import { CENSUS_YEARS, fmt, LATEST, municipality, rankByPopulation, type Barangay } from "../demographics-data";
 
 const config = { population: { label: "Residents" } } satisfies ChartConfig;
 

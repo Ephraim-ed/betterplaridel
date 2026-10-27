@@ -3,7 +3,7 @@ import { Area, AreaChart, CartesianGrid, LabelList, ReferenceLine, XAxis, YAxis 
 import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart";
 import { DashboardCard } from "@/features/statistics/components/dashboard-card";
 import { WrappedTick } from "@/features/statistics/components/wrapped-tick";
-import { pillars, type Pillar } from "../data";
+import { pillars, type Pillar } from "../competitiveness-data";
 import { colors, score } from "../format";
 
 const config = {

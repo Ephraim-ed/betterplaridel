@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { DashboardCard } from "@/features/statistics/components/dashboard-card";
 import { InfoHint } from "@/features/statistics/components/info-hint";
 import { incomeColors, sourceColors } from "../colors";
-import { localSources, peso, percent, plaridel, totalIncome } from "../data";
+import { localSources, peso, percent, plaridel, totalIncome } from "../income-data";
 import { sourceInfo } from "../info";
 
 type Row = { key: string; label: string; amount: number; color: string };

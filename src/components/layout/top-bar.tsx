@@ -13,7 +13,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { formatNumber, tel } from "@/features/hotlines/format";
-import { hotlineGroups } from "@/features/hotlines/data";
+import { hotlineGroups, numberOf } from "@/features/hotlines/hotlines-data";
 
 // Live data comes straight from two free services that need no key: Open-Meteo for the weather in Plaridel,
 // and Frankfurter for the European Central Bank's daily reference rates. Either one simply doesn't show if it
@@ -25,6 +25,7 @@ const RATES_URL = `https://api.frankfurter.dev/v2/rates?base=PHP&quotes=${CURREN
 const ROTATE_MS = 5000;
 
 const rescue = hotlineGroups[0].contacts.find((c) => c.name === "Plaridel Rescue");
+const rescueNumber = rescue && numberOf(rescue.number);
 
 type Weather = { temperature: number; label: string; Icon: LucideIcon };
 type Rate = { currency: string; pesos: number; date: string };
@@ -118,11 +119,11 @@ export function TopBar() {
         <PhoneIcon aria-hidden className="size-3.5" />
         911
       </a>
-      {rescue && (
+      {rescueNumber && (
         <>
           <span aria-hidden>·</span>
-          <a href={tel(rescue.number)} className="text-foreground hover:underline">
-            Rescue {formatNumber(rescue.number)}
+          <a href={tel(rescueNumber)} className="text-foreground hover:underline">
+            Rescue {formatNumber(rescueNumber)}
           </a>
         </>
       )}

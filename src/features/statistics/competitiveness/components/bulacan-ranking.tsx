@@ -2,7 +2,7 @@ import { Bar, BarChart, LabelList, XAxis, YAxis } from "recharts";
 import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart";
 import { DashboardCard } from "@/features/statistics/components/dashboard-card";
 import { FilledBar } from "@/features/statistics/components/filled-bar";
-import { bulacan } from "../data";
+import { bulacan } from "../competitiveness-data";
 import { colors, ordinalSuffix, score } from "../format";
 
 const config = { score: { label: "Overall score" } } satisfies ChartConfig;

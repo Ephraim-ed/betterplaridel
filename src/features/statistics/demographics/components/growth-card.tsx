@@ -4,7 +4,7 @@ import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 import { DashboardCard } from "@/features/statistics/components/dashboard-card";
 import { RollingNumber } from "@/features/statistics/components/rolling-number";
 import { chartColors } from "../colors";
-import { barangays, CENSUS_YEARS, fmt, LATEST, municipality, type Barangay } from "../data";
+import { barangays, CENSUS_YEARS, fmt, LATEST, municipality, type Barangay } from "../demographics-data";
 
 const FIRST = CENSUS_YEARS[0];
 const YEARS = LATEST - FIRST;

@@ -1,0 +1,206 @@
+{
+  "sources": [
+    {
+      "label": "Philippine Statistics Authority — PSGC, Plaridel barangays",
+      "url": "https://psa.gov.ph/classification/psgc/barangays/0301417000",
+      "notes": "Population from the 2015 Census of Population (POPCEN) and the 2020 Census of Population and Housing (CPH). Urban/rural classes are PSA's, based on the 2020 CPH."
+    },
+    {
+      "label": "philippines-json-maps (PSGC barangay shapefiles, Dec 2023)",
+      "url": "https://github.com/faeldon/philippines-json-maps",
+      "notes": "areaKm2 is approximate: measured from the barangay boundary map, not an official PSA figure."
+    }
+  ],
+  "barangays": [
+    {
+      "psgc": "0301417001",
+      "name": "Agnaya",
+      "urban": true,
+      "population": {
+        "2015": 2585,
+        "2020": 2821
+      },
+      "areaKm2": 0.57
+    },
+    {
+      "psgc": "0301417002",
+      "name": "Bagong Silang",
+      "urban": false,
+      "population": {
+        "2015": 3322,
+        "2020": 4237
+      },
+      "areaKm2": 2.36
+    },
+    {
+      "psgc": "0301417003",
+      "name": "Banga I",
+      "urban": true,
+      "population": {
+        "2015": 7030,
+        "2020": 5892
+      },
+      "areaKm2": 1.22
+    },
+    {
+      "psgc": "0301417004",
+      "name": "Banga II",
+      "urban": true,
+      "population": {
+        "2015": 9036,
+        "2020": 8741
+      },
+      "areaKm2": 0.76
+    },
+    {
+      "psgc": "0301417005",
+      "name": "Bintog",
+      "urban": false,
+      "population": {
+        "2015": 4122,
+        "2020": 4585
+      },
+      "areaKm2": 1.81
+    },
+    {
+      "psgc": "0301417006",
+      "name": "Bulihan",
+      "urban": true,
+      "population": {
+        "2015": 5721,
+        "2020": 6755
+      },
+      "areaKm2": 5.48
+    },
+    {
+      "psgc": "0301417007",
+      "name": "Culianin",
+      "urban": true,
+      "population": {
+        "2015": 4130,
+        "2020": 6731
+      },
+      "areaKm2": 2.84
+    },
+    {
+      "psgc": "0301417008",
+      "name": "Dampol",
+      "urban": false,
+      "population": {
+        "2015": 3183,
+        "2020": 3476
+      },
+      "areaKm2": 0.85
+    },
+    {
+      "psgc": "0301417010",
+      "name": "Lagundi",
+      "urban": true,
+      "population": {
+        "2015": 4243,
+        "2020": 4962
+      },
+      "areaKm2": 2.78
+    },
+    {
+      "psgc": "0301417011",
+      "name": "Lalangan",
+      "urban": false,
+      "population": {
+        "2015": 2077,
+        "2020": 2259
+      },
+      "areaKm2": 1.77
+    },
+    {
+      "psgc": "0301417012",
+      "name": "Lumang Bayan",
+      "urban": true,
+      "population": {
+        "2015": 5361,
+        "2020": 5609
+      },
+      "areaKm2": 1.22
+    },
+    {
+      "psgc": "0301417014",
+      "name": "Parulan",
+      "urban": true,
+      "population": {
+        "2015": 7590,
+        "2020": 8935
+      },
+      "areaKm2": 2.64
+    },
+    {
+      "psgc": "0301417015",
+      "name": "Poblacion",
+      "urban": true,
+      "population": {
+        "2015": 3901,
+        "2020": 3878
+      },
+      "areaKm2": 0.37
+    },
+    {
+      "psgc": "0301417016",
+      "name": "Rueda",
+      "urban": false,
+      "population": {
+        "2015": 1803,
+        "2020": 1821
+      },
+      "areaKm2": 0.97
+    },
+    {
+      "psgc": "0301417017",
+      "name": "San Jose",
+      "urban": true,
+      "population": {
+        "2015": 4448,
+        "2020": 5016
+      },
+      "areaKm2": 2.69
+    },
+    {
+      "psgc": "0301417018",
+      "name": "Santa Ines",
+      "urban": true,
+      "population": {
+        "2015": 2953,
+        "2020": 2922
+      },
+      "areaKm2": 0.45
+    },
+    {
+      "psgc": "0301417019",
+      "name": "Santo Niño",
+      "urban": true,
+      "population": {
+        "2015": 10761,
+        "2020": 10721
+      },
+      "areaKm2": 2.38
+    },
+    {
+      "psgc": "0301417020",
+      "name": "Sipat",
+      "urban": true,
+      "population": {
+        "2015": 5856,
+        "2020": 7822
+      },
+      "areaKm2": 2.08
+    },
+    {
+      "psgc": "0301417021",
+      "name": "Tabang",
+      "urban": true,
+      "population": {
+        "2015": 19683,
+        "2020": 17249
+      },
+      "areaKm2": 2.68
+    }
+  ]
+}
