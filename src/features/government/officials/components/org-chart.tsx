@@ -12,12 +12,13 @@ import {
 } from "@xyflow/react";
 import { AnimateIcon } from "@animate-ui/react/icons";
 import { RotateCcw } from "@/components/animate-ui/icons/rotate-ccw";
-import { orgNodes, type OrgNode } from "../data";
+import { orgNodes, type OrgNode } from "../official-data";
 import { NODE_HEIGHT, NODE_WIDTH, OfficialNode, type OfficialFlowNode } from "./official-node";
 import { OfficialDetails } from "./official-details";
 
 const nodeTypes: NodeTypes = { official: OfficialNode };
 
+// The whole government: the municipal officials, plus each barangay under the Mayor with its council and SK.
 const byId = new Map(orgNodes.map((n) => [n.id, n]));
 const childrenOf = (id: string) => orgNodes.filter((n) => n.parentId === id);
 

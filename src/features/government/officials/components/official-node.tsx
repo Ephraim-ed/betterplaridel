@@ -1,5 +1,5 @@
 import { Handle, Position, type Node, type NodeProps } from "@xyflow/react";
-import type { OrgNode } from "../data";
+import type { OrgNode } from "../official-data";
 
 export type OfficialNodeData = {
   official: OrgNode;
@@ -15,7 +15,7 @@ export type OfficialFlowNode = Node<OfficialNodeData, "official">;
 export const NODE_WIDTH = 340;
 export const NODE_HEIGHT = 88;
 
-function initials(name: string) {
+export function initials(name: string) {
   const words = name.replace(/^Hon\.\s*/, "").split(/\s+/).filter((w) => /^[A-Z]/.test(w));
   return (words[0]?.[0] ?? "") + (words.length > 1 ? words[words.length - 1][0] : "");
 }

@@ -1,0 +1,1694 @@
+{
+  "dataVintage": "2026-09-14",
+  "elections": [
+    {
+      "year": 2025,
+      "contests": [
+        {
+          "position": "mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": 54801,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Ate Jocell Vistan",
+              "party": "NUP",
+              "votes": 41290,
+              "won": true
+            },
+            {
+              "name": "James Anthony San Diego",
+              "party": "PFP",
+              "votes": 13511,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "vice-mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": 55086,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Mhel Gatdula De Leon",
+              "party": "IND",
+              "votes": 37742,
+              "won": true
+            },
+            {
+              "name": "Lorie Vinta",
+              "party": "NUP",
+              "votes": 17344,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "councilor",
+          "district": "LONE",
+          "seats": 8,
+          "totalVotes": 311620,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Seth Villena Cucio",
+              "party": "AKSYON",
+              "votes": 41680,
+              "won": true
+            },
+            {
+              "name": "Sheila Reyes Enriquez",
+              "party": "NUP",
+              "votes": 32708,
+              "won": true
+            },
+            {
+              "name": "Grace Angeles Alcantara",
+              "party": "IND",
+              "votes": 26497,
+              "won": true
+            },
+            {
+              "name": "Roset Geronimo",
+              "party": "IND",
+              "votes": 26325,
+              "won": true
+            },
+            {
+              "name": "Ryan Santiago Sagala",
+              "party": "NUP",
+              "votes": 24533,
+              "won": true
+            },
+            {
+              "name": "Sk Marquez San Gabriel",
+              "party": "NUP",
+              "votes": 22962,
+              "won": true
+            },
+            {
+              "name": "Ac Torres De Leon",
+              "party": "NUP",
+              "votes": 21862,
+              "won": true
+            },
+            {
+              "name": "Raul Villaseñor Gatuz",
+              "party": "NUP",
+              "votes": 21824,
+              "won": true
+            },
+            {
+              "name": "Gerald Santiago Constantino",
+              "party": "NUP",
+              "votes": 21297,
+              "won": false
+            },
+            {
+              "name": "Raymund Lopez",
+              "party": "NUP",
+              "votes": 17187,
+              "won": false
+            },
+            {
+              "name": "Allen Macalinao Marcelo",
+              "party": "NUP",
+              "votes": 16936,
+              "won": false
+            },
+            {
+              "name": "Renato Gatuz",
+              "party": "PFP",
+              "votes": 9737,
+              "won": false
+            },
+            {
+              "name": "Popoy Bernardino",
+              "party": "IND",
+              "votes": 9315,
+              "won": false
+            },
+            {
+              "name": "Wendel Ariñas",
+              "party": "IND",
+              "votes": 7137,
+              "won": false
+            },
+            {
+              "name": "Raul Mariano",
+              "party": "PFP",
+              "votes": 6082,
+              "won": false
+            },
+            {
+              "name": "Kuya Joon Sarmiento",
+              "party": "PFP",
+              "votes": 5538,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "representative",
+          "district": "SECOND",
+          "seats": 1,
+          "totalVotes": 177431,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Ditse Tina Pancho",
+              "party": "NUP",
+              "votes": 167236,
+              "won": true
+            },
+            {
+              "name": "Jimmy Villafuerte",
+              "party": "IND",
+              "votes": 10195,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "board-member",
+          "district": "SECOND",
+          "seats": 1,
+          "totalVotes": 278863,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Pechay Villanueva Dela Cruz",
+              "party": "NUP",
+              "votes": 99290,
+              "won": true
+            },
+            {
+              "name": "Dingdong Viceo Nicolas",
+              "party": "NUP",
+              "votes": 84464,
+              "won": false
+            },
+            {
+              "name": "Ate Charm Clemente",
+              "party": "PFP",
+              "votes": 62829,
+              "won": false
+            },
+            {
+              "name": "Glenn Vistan",
+              "party": "PFP",
+              "votes": 25583,
+              "won": false
+            },
+            {
+              "name": "Vino Andal",
+              "party": "IND",
+              "votes": 6697,
+              "won": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "contests": [
+        {
+          "position": "mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": 57645,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Ate Ramos Vistan",
+              "party": "NUP",
+              "votes": 35381,
+              "won": true
+            },
+            {
+              "name": "Mhel De Leon De Leon",
+              "party": "IND",
+              "votes": 22264,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "vice-mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": 54366,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Lorie Vinta",
+              "party": "NUP",
+              "votes": 32817,
+              "won": true
+            },
+            {
+              "name": "Eddie Salonga",
+              "party": "RP",
+              "votes": 21549,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "councilor",
+          "district": "LONE",
+          "seats": 8,
+          "totalVotes": 355106,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Sheila Enrina Enriquez",
+              "party": "NUP",
+              "votes": 34086,
+              "won": true
+            },
+            {
+              "name": "Reggie Javier",
+              "party": "NUP",
+              "votes": 27544,
+              "won": true
+            },
+            {
+              "name": "Ryan Christian Sagala",
+              "party": "NUP",
+              "votes": 25279,
+              "won": true
+            },
+            {
+              "name": "Ac Torres De Leon",
+              "party": "NUP",
+              "votes": 24325,
+              "won": true
+            },
+            {
+              "name": "Ysabel Isabel Liwanag",
+              "party": "NUP",
+              "votes": 24214,
+              "won": true
+            },
+            {
+              "name": "Raul Villaseñor Gatuz",
+              "party": "NUP",
+              "votes": 22080,
+              "won": true
+            },
+            {
+              "name": "Kap Hernandez Lopez",
+              "party": "NUP",
+              "votes": 21004,
+              "won": true
+            },
+            {
+              "name": "Allen Macalinao Marcelo",
+              "party": "NUP",
+              "votes": 20359,
+              "won": true
+            },
+            {
+              "name": "Roset Geronimo",
+              "party": "IND",
+              "votes": 20320,
+              "won": false
+            },
+            {
+              "name": "Benjie San Diego",
+              "party": "IND",
+              "votes": 19788,
+              "won": false
+            },
+            {
+              "name": "Glenn Vistan",
+              "party": "RP",
+              "votes": 18297,
+              "won": false
+            },
+            {
+              "name": "Baldo Santos",
+              "party": "RP",
+              "votes": 14627,
+              "won": false
+            },
+            {
+              "name": "Mervin Roberto Espejo",
+              "party": "IND",
+              "votes": 14349,
+              "won": false
+            },
+            {
+              "name": "Mark Bernardino",
+              "party": "IND",
+              "votes": 13783,
+              "won": false
+            },
+            {
+              "name": "Aj Gatuz",
+              "party": "IND",
+              "votes": 12770,
+              "won": false
+            },
+            {
+              "name": "Charvic Panday",
+              "party": "IND",
+              "votes": 8851,
+              "won": false
+            },
+            {
+              "name": "Kuya Joon Sarmiento",
+              "party": "IND",
+              "votes": 7725,
+              "won": false
+            },
+            {
+              "name": "Juri Rivera",
+              "party": "IND",
+              "votes": 7694,
+              "won": false
+            },
+            {
+              "name": "Manuel Tomaneng Jr",
+              "party": "IND",
+              "votes": 6646,
+              "won": false
+            },
+            {
+              "name": "Oliver Esperanza",
+              "party": "IND",
+              "votes": 5851,
+              "won": false
+            },
+            {
+              "name": "Eddie Garcia",
+              "party": "RP",
+              "votes": 3073,
+              "won": false
+            },
+            {
+              "name": "Federico Lures",
+              "party": "IND",
+              "votes": 1488,
+              "won": false
+            },
+            {
+              "name": "Ernani Venegas",
+              "party": "PDPLBN",
+              "votes": 953,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "representative",
+          "district": "SECOND",
+          "seats": 1,
+          "totalVotes": 170235,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Ditse Tina Pancho",
+              "party": "NUP",
+              "votes": 137276,
+              "won": true
+            },
+            {
+              "name": "Fb Bermudez",
+              "party": "NPC",
+              "votes": 24936,
+              "won": false
+            },
+            {
+              "name": "Jimmy Villafuerte",
+              "party": "IND",
+              "votes": 4746,
+              "won": false
+            },
+            {
+              "name": "Tony Deborja",
+              "party": "IND",
+              "votes": 3277,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "board-member",
+          "district": "SECOND",
+          "seats": 1,
+          "totalVotes": 275635,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Pechay Villanueva Dela Cruz",
+              "party": "NUP",
+              "votes": 78730,
+              "won": true
+            },
+            {
+              "name": "Dingdong Viceo Nicolas",
+              "party": "PDPLBN",
+              "votes": 60508,
+              "won": false
+            },
+            {
+              "name": "Ate Charm Clemente",
+              "party": "IND",
+              "votes": 57145,
+              "won": false
+            },
+            {
+              "name": "Bokal-Atty Monet Posadas",
+              "party": "NUP",
+              "votes": 55214,
+              "won": false
+            },
+            {
+              "name": "Grace Angeles Alcantara",
+              "party": "PDPLBN",
+              "votes": 24038,
+              "won": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "contests": [
+        {
+          "position": "mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": 40608,
+          "uncontested": true,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Tessie Ramos Vistan",
+              "party": "NUP",
+              "votes": 40608,
+              "won": true
+            }
+          ]
+        },
+        {
+          "position": "vice-mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": 40610,
+          "uncontested": true,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Mhel Gatdula De Leon",
+              "party": "NUP",
+              "votes": 40610,
+              "won": true
+            }
+          ]
+        },
+        {
+          "position": "councilor",
+          "district": "LONE",
+          "seats": 8,
+          "totalVotes": 276610,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Sheila Reyes Enriquez",
+              "party": "NUP",
+              "votes": 32426,
+              "won": true
+            },
+            {
+              "name": "Lorie Vinta",
+              "party": "NUP",
+              "votes": 29718,
+              "won": true
+            },
+            {
+              "name": "Ysabel Vicente Liwanag",
+              "party": "IND",
+              "votes": 26122,
+              "won": true
+            },
+            {
+              "name": "Reggie Javier",
+              "party": "NUP",
+              "votes": 25474,
+              "won": true
+            },
+            {
+              "name": "Ryan Santiago Sagala",
+              "party": "NUP",
+              "votes": 24552,
+              "won": true
+            },
+            {
+              "name": "Gerald Santiago Constantino",
+              "party": "NUP",
+              "votes": 23386,
+              "won": true
+            },
+            {
+              "name": "Rhandy Gonzales Marcelo",
+              "party": "NUP",
+              "votes": 23134,
+              "won": true
+            },
+            {
+              "name": "Ver Cruz Alejo",
+              "party": "NUP",
+              "votes": 21834,
+              "won": true
+            },
+            {
+              "name": "Raul Villaseñor Gatuz",
+              "party": "NUP",
+              "votes": 19386,
+              "won": false
+            },
+            {
+              "name": "Kap Tuge Camitan",
+              "party": "IND",
+              "votes": 18642,
+              "won": false
+            },
+            {
+              "name": "Roset Geronimo",
+              "party": "IND",
+              "votes": 17806,
+              "won": false
+            },
+            {
+              "name": "Glenn Vistan",
+              "party": "IND",
+              "votes": 14130,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "representative",
+          "district": "SECOND",
+          "seats": 1,
+          "totalVotes": 308196,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Apol Pancho",
+              "party": "NUP",
+              "votes": 287118,
+              "won": true
+            },
+            {
+              "name": "Jimmy Villafuerte",
+              "party": "IND",
+              "votes": 11900,
+              "won": false
+            },
+            {
+              "name": "Raffy Avila",
+              "party": "IND",
+              "votes": 9178,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "board-member",
+          "district": "SECOND",
+          "seats": 1,
+          "totalVotes": 427290,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Pechay Villanueva Dela Cruz",
+              "party": "NUP",
+              "votes": 180439,
+              "won": true
+            },
+            {
+              "name": "Monet Posadas",
+              "party": "NUP",
+              "votes": 146531,
+              "won": false
+            },
+            {
+              "name": "Bobby Jose",
+              "party": "PDPLBN",
+              "votes": 81086,
+              "won": false
+            },
+            {
+              "name": "Tony Deborja",
+              "party": "PDPLBN",
+              "votes": 19234,
+              "won": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2016,
+      "contests": [
+        {
+          "position": "mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": 36313,
+          "uncontested": true,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Jocell Ramos Vistan",
+              "party": "LP",
+              "votes": 36313,
+              "won": true
+            }
+          ]
+        },
+        {
+          "position": "vice-mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": 43185,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Mhel Gatdula De Leon",
+              "party": "IND",
+              "votes": 26929,
+              "won": true
+            },
+            {
+              "name": "Eddie Salonga",
+              "party": "UNA",
+              "votes": 16256,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "councilor",
+          "district": "LONE",
+          "seats": 8,
+          "totalVotes": 270362,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Lorie Vinta",
+              "party": "LP",
+              "votes": 27011,
+              "won": true
+            },
+            {
+              "name": "Reginald Vergara Javier",
+              "party": "LP",
+              "votes": 22389,
+              "won": true
+            },
+            {
+              "name": "Raul Villaseñor Gatuz",
+              "party": "LP",
+              "votes": 21146,
+              "won": true
+            },
+            {
+              "name": "Maria Vicente Liwanag",
+              "party": "IND",
+              "votes": 20884,
+              "won": true
+            },
+            {
+              "name": "Gerald Santiago Constantino",
+              "party": "LP",
+              "votes": 20743,
+              "won": true
+            },
+            {
+              "name": "Kap Cruz Camitan",
+              "party": "IND",
+              "votes": 20620,
+              "won": true
+            },
+            {
+              "name": "Rhandy Gonzales Marcelo",
+              "party": "LP",
+              "votes": 20121,
+              "won": true
+            },
+            {
+              "name": "Ver Cruz Alejo",
+              "party": "LP",
+              "votes": 19748,
+              "won": true
+            },
+            {
+              "name": "Ryan Santiago Sagala",
+              "party": "LP",
+              "votes": 19711,
+              "won": false
+            },
+            {
+              "name": "Marci Mariano",
+              "party": "UNA",
+              "votes": 16591,
+              "won": false
+            },
+            {
+              "name": "James Anthony San Diego",
+              "party": "IND",
+              "votes": 16381,
+              "won": false
+            },
+            {
+              "name": "Lito Dela Cruz",
+              "party": "LP",
+              "votes": 15704,
+              "won": false
+            },
+            {
+              "name": "Lino Garcia",
+              "party": "IND",
+              "votes": 10120,
+              "won": false
+            },
+            {
+              "name": "Wilfredo Valencia",
+              "party": "IND",
+              "votes": 8322,
+              "won": false
+            },
+            {
+              "name": "Vic Patola Clemente",
+              "party": "IND",
+              "votes": 7010,
+              "won": false
+            },
+            {
+              "name": "Alex De Vera",
+              "party": "IND",
+              "votes": 3861,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "representative",
+          "district": "SECOND",
+          "seats": 1,
+          "totalVotes": 281843,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Apol Pancho",
+              "party": "NUP",
+              "votes": 266647,
+              "won": true
+            },
+            {
+              "name": "Jaime Villafuerte",
+              "party": "IND",
+              "votes": 11609,
+              "won": false
+            },
+            {
+              "name": "Louie Angeles",
+              "party": "KBL",
+              "votes": 3587,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "board-member",
+          "district": "SECOND",
+          "seats": 1,
+          "totalVotes": 397996,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Buko Villanueva Dela Cruz",
+              "party": "LP",
+              "votes": 174003,
+              "won": true
+            },
+            {
+              "name": "Baby Monet Posadas",
+              "party": "LP",
+              "votes": 113883,
+              "won": false
+            },
+            {
+              "name": "Chippy Tantingco",
+              "party": "NPC",
+              "votes": 65158,
+              "won": false
+            },
+            {
+              "name": "Jerome Gumatay Reyes",
+              "party": "NPC",
+              "votes": 44952,
+              "won": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2013,
+      "contests": [
+        {
+          "position": "mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": 33381,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Jocell Ramos Vistan",
+              "party": "NUP",
+              "votes": 18008,
+              "won": true
+            },
+            {
+              "name": "Pat Reyes",
+              "party": "UNA",
+              "votes": 10047,
+              "won": false
+            },
+            {
+              "name": "Leonilo Ignacio Yap",
+              "party": "PDP",
+              "votes": 3061,
+              "won": false
+            },
+            {
+              "name": "Ernesto Santiago",
+              "party": "LP",
+              "votes": 2265,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "vice-mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": 31976,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Rolando Cuzon Javier",
+              "party": "UNA",
+              "votes": 10597,
+              "won": true
+            },
+            {
+              "name": "Merto Cervania",
+              "party": "NUP",
+              "votes": 8691,
+              "won": false
+            },
+            {
+              "name": "Marci Mariano",
+              "party": "PDP",
+              "votes": 6417,
+              "won": false
+            },
+            {
+              "name": "Eduardo Salonga",
+              "party": "LP",
+              "votes": 3955,
+              "won": false
+            },
+            {
+              "name": "Boy Tan",
+              "party": "IND",
+              "votes": 2316,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "councilor",
+          "district": "LONE",
+          "seats": 7,
+          "totalVotes": 202820,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Mhel Gatdula De Leon",
+              "party": "NUP",
+              "votes": 18560,
+              "won": false
+            },
+            {
+              "name": "Jeffrey Ryan Mariano Tantingco",
+              "party": "NUP",
+              "votes": 16802,
+              "won": true
+            },
+            {
+              "name": "Mary Grace Angeles Alcantara",
+              "party": "NUP",
+              "votes": 15482,
+              "won": true
+            },
+            {
+              "name": "Manuelito Santos Reyes",
+              "party": "NUP",
+              "votes": 13404,
+              "won": true
+            },
+            {
+              "name": "Gerald Santiago Constantino",
+              "party": "NUP",
+              "votes": 11941,
+              "won": true
+            },
+            {
+              "name": "Virgilio Dela Cruz Alejo",
+              "party": "NUP",
+              "votes": 11797,
+              "won": true
+            },
+            {
+              "name": "Efren Cabral Marquez",
+              "party": "NUP",
+              "votes": 11774,
+              "won": true
+            },
+            {
+              "name": "Rhandy Gonzales Marcelo",
+              "party": "IND",
+              "votes": 10931,
+              "won": true
+            },
+            {
+              "name": "Roset Geronimo",
+              "party": "UNA",
+              "votes": 10381,
+              "won": false
+            },
+            {
+              "name": "Ysabel Vicente Liwanag",
+              "party": "UNA",
+              "votes": 10173,
+              "won": false
+            },
+            {
+              "name": "Dionel Ramos",
+              "party": "NUP",
+              "votes": 9502,
+              "won": false
+            },
+            {
+              "name": "Joie Macam",
+              "party": "LP",
+              "votes": 8857,
+              "won": false
+            },
+            {
+              "name": "Bobot Faustino",
+              "party": "UNA",
+              "votes": 6755,
+              "won": false
+            },
+            {
+              "name": "Bernard Cervania",
+              "party": "UNA",
+              "votes": 6389,
+              "won": false
+            },
+            {
+              "name": "Allan Madrigal",
+              "party": "UNA",
+              "votes": 6077,
+              "won": false
+            },
+            {
+              "name": "Beng Eusebio",
+              "party": "UNA",
+              "votes": 5902,
+              "won": false
+            },
+            {
+              "name": "Michelle Javier",
+              "party": "LP",
+              "votes": 5509,
+              "won": false
+            },
+            {
+              "name": "Renato Gatuz",
+              "party": "LP",
+              "votes": 4255,
+              "won": false
+            },
+            {
+              "name": "Renato Rivero",
+              "party": "LP",
+              "votes": 4136,
+              "won": false
+            },
+            {
+              "name": "Nestor San Juan",
+              "party": "UNA",
+              "votes": 3005,
+              "won": false
+            },
+            {
+              "name": "Dong Arenas",
+              "party": "UNA",
+              "votes": 2898,
+              "won": false
+            },
+            {
+              "name": "Dex Medina",
+              "party": "LP",
+              "votes": 2577,
+              "won": false
+            },
+            {
+              "name": "Bonifacio Santos",
+              "party": "LP",
+              "votes": 2027,
+              "won": false
+            },
+            {
+              "name": "Carlos Dimaapi",
+              "party": "LP",
+              "votes": 2016,
+              "won": false
+            },
+            {
+              "name": "Romeo Mangalino",
+              "party": "LP",
+              "votes": 1670,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "representative",
+          "district": "SECOND",
+          "seats": 1,
+          "totalVotes": 240085,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Apol Pancho",
+              "party": "NUP",
+              "votes": 143705,
+              "won": true
+            },
+            {
+              "name": "Pete Mendoza",
+              "party": "LP",
+              "votes": 88285,
+              "won": false
+            },
+            {
+              "name": "Jimmy Villafuerte",
+              "party": "IND",
+              "votes": 5092,
+              "won": false
+            },
+            {
+              "name": "Joseph Cristobal",
+              "party": "IND",
+              "votes": 2274,
+              "won": false
+            },
+            {
+              "name": "Tony Deborja",
+              "party": "PDP",
+              "votes": 729,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "board-member",
+          "district": "SECOND",
+          "seats": 2,
+          "totalVotes": 296330,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Enrique Villanueva Dela Cruz",
+              "party": "NUP",
+              "votes": 139967,
+              "won": true
+            },
+            {
+              "name": "Ramon Rivera Posadas",
+              "party": "NUP",
+              "votes": 110534,
+              "won": true
+            },
+            {
+              "name": "Reynaldo Mocorro Trinidad",
+              "party": "IND",
+              "votes": 45829,
+              "won": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2010,
+      "contests": [
+        {
+          "position": "mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": 34415,
+          "uncontested": true,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Anastacia Ramos Vistan",
+              "party": "LP",
+              "votes": 34415,
+              "won": true
+            }
+          ]
+        },
+        {
+          "position": "vice-mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": 32263,
+          "uncontested": true,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Leonilo Ignacio Yap",
+              "party": "LP",
+              "votes": 32263,
+              "won": true
+            }
+          ]
+        },
+        {
+          "position": "councilor",
+          "district": "LONE",
+          "seats": 7,
+          "totalVotes": 244458,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Sheila Ana Enrina Reyes Enriquez",
+              "party": "LP",
+              "votes": 28980,
+              "won": true
+            },
+            {
+              "name": "Mary Grace Angeles Alcantara",
+              "party": "LP",
+              "votes": 22544,
+              "won": true
+            },
+            {
+              "name": "Donato Constantino Valerio",
+              "party": "LP",
+              "votes": 21401,
+              "won": true
+            },
+            {
+              "name": "Jeffrey Ryan Mariano Tantingco",
+              "party": "LP",
+              "votes": 21327,
+              "won": true
+            },
+            {
+              "name": "Imelda De Leon",
+              "party": "IND",
+              "votes": 19621,
+              "won": false
+            },
+            {
+              "name": "Efren Cabral Marquez",
+              "party": "LP",
+              "votes": 19551,
+              "won": true
+            },
+            {
+              "name": "Marcelino Cruz Mariano",
+              "party": "LP",
+              "votes": 17664,
+              "won": true
+            },
+            {
+              "name": "Manuelito Santos Reyes",
+              "party": "LP",
+              "votes": 16767,
+              "won": true
+            },
+            {
+              "name": "Dionel Ramos",
+              "party": "LP",
+              "votes": 16535,
+              "won": false
+            },
+            {
+              "name": "Eduardo Salonga",
+              "party": "IND",
+              "votes": 13221,
+              "won": false
+            },
+            {
+              "name": "Joselito Javier",
+              "party": "IND",
+              "votes": 9948,
+              "won": false
+            },
+            {
+              "name": "Wilfredo Valencia",
+              "party": "IND",
+              "votes": 8973,
+              "won": false
+            },
+            {
+              "name": "Carlo Vergel J. Eusebio",
+              "party": "IND",
+              "votes": 8516,
+              "won": false
+            },
+            {
+              "name": "Renato Rivero",
+              "party": "IND",
+              "votes": 8513,
+              "won": false
+            },
+            {
+              "name": "Santiago Isidro",
+              "party": "IND",
+              "votes": 5681,
+              "won": false
+            },
+            {
+              "name": "Jaime Veneracion",
+              "party": "IND",
+              "votes": 5216,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "representative",
+          "district": "SECOND",
+          "seats": 1,
+          "totalVotes": 240163,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Pedro Pancho",
+              "party": "LKS-KAM",
+              "votes": 131170,
+              "won": true
+            },
+            {
+              "name": "Ambrosio Jr. C. Cruz",
+              "party": "LP",
+              "votes": 104160,
+              "won": false
+            },
+            {
+              "name": "Jaime Villafuerte",
+              "party": "IND",
+              "votes": 4833,
+              "won": false
+            }
+          ]
+        },
+        {
+          "position": "board-member",
+          "district": "SECOND",
+          "seats": 2,
+          "totalVotes": 347667,
+          "uncontested": false,
+          "winnersOnly": false,
+          "candidates": [
+            {
+              "name": "Ramon Rivera Posadas",
+              "party": "LP",
+              "votes": 106223,
+              "won": true
+            },
+            {
+              "name": "Enrique De La Cruz",
+              "party": "LP",
+              "votes": 100375,
+              "won": true
+            },
+            {
+              "name": "Norielito Espiritu German",
+              "party": "LAKAS-CMD",
+              "votes": 58803,
+              "won": false
+            },
+            {
+              "name": "Cecilia Quimpo",
+              "party": "LAKAS-CMD",
+              "votes": 36093,
+              "won": false
+            },
+            {
+              "name": "Jose Francisco C. Rivera",
+              "party": "PMP",
+              "votes": 21142,
+              "won": false
+            },
+            {
+              "name": "Lydia Abad",
+              "party": "IND",
+              "votes": 13406,
+              "won": false
+            },
+            {
+              "name": "Francisco Concepcion",
+              "party": "PMP",
+              "votes": 11625,
+              "won": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2007,
+      "contests": [
+        {
+          "position": "mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": null,
+          "uncontested": false,
+          "winnersOnly": true,
+          "candidates": [
+            {
+              "name": "Anastacia Ramos Vistan",
+              "party": "KAMPI",
+              "votes": null,
+              "won": true
+            }
+          ]
+        },
+        {
+          "position": "vice-mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": null,
+          "uncontested": false,
+          "winnersOnly": true,
+          "candidates": [
+            {
+              "name": "Leonilo Ignacio Yap",
+              "party": "KAMPI",
+              "votes": null,
+              "won": true
+            }
+          ]
+        },
+        {
+          "position": "councilor",
+          "district": null,
+          "seats": 8,
+          "totalVotes": null,
+          "uncontested": false,
+          "winnersOnly": true,
+          "candidates": [
+            {
+              "name": "Mary Grace Angeles Alcantara",
+              "party": "LAKAS-CMD",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Sheila Ana Enrina Reyes Enriquez",
+              "party": "KAMPI",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Armando Macalinao Marcelo",
+              "party": "KAMPI",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Marcelino Cruz Mariano",
+              "party": "KAMPI",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Efren Cabral Marquez",
+              "party": "KAMPI",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Manuelito Santos Reyes",
+              "party": "KAMPI",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Jeffrey Ryan Mariano Tantingco",
+              "party": "KAMPI",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Donato Constantino Valerio",
+              "party": "KAMPI",
+              "votes": null,
+              "won": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2004,
+      "contests": [
+        {
+          "position": "mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": null,
+          "uncontested": false,
+          "winnersOnly": true,
+          "candidates": [
+            {
+              "name": "Anastacia Ramos Vistan",
+              "party": "LAKAS-CMD",
+              "votes": null,
+              "won": true
+            }
+          ]
+        },
+        {
+          "position": "vice-mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": null,
+          "uncontested": false,
+          "winnersOnly": true,
+          "candidates": [
+            {
+              "name": "Leonilo Ignacio Yap",
+              "party": "LAKAS-CMD",
+              "votes": null,
+              "won": true
+            }
+          ]
+        },
+        {
+          "position": "councilor",
+          "district": null,
+          "seats": 7,
+          "totalVotes": null,
+          "uncontested": false,
+          "winnersOnly": true,
+          "candidates": [
+            {
+              "name": "Sheila Ana Enrina Reyes Enriquez",
+              "party": "LAKAS-CMD",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Armando Macalinao Marcelo",
+              "party": "LAKAS-CMD",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Marcelino Cruz Mariano",
+              "party": "LAKAS-CMD",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Pablo L. Marquez",
+              "party": "LAKAS-CMD",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Lorie Vinta Surio",
+              "party": "LAKAS-CMD",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Francisco R. Tan",
+              "party": "LAKAS-CMD",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Donato Constantino Valerio",
+              "party": "LAKAS-CMD",
+              "votes": null,
+              "won": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2001,
+      "contests": [
+        {
+          "position": "mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": null,
+          "uncontested": false,
+          "winnersOnly": true,
+          "candidates": [
+            {
+              "name": "Jaime J. Vistan",
+              "party": "LAKAS NUCD-UMDP",
+              "votes": null,
+              "won": true
+            }
+          ]
+        },
+        {
+          "position": "vice-mayor",
+          "district": null,
+          "seats": 1,
+          "totalVotes": null,
+          "uncontested": false,
+          "winnersOnly": true,
+          "candidates": [
+            {
+              "name": "Rolando Cuzon Javier",
+              "party": "LDP",
+              "votes": null,
+              "won": true
+            }
+          ]
+        },
+        {
+          "position": "councilor",
+          "district": null,
+          "seats": 8,
+          "totalVotes": null,
+          "uncontested": false,
+          "winnersOnly": true,
+          "candidates": [
+            {
+              "name": "Paulino R. Bell Jr",
+              "party": "LAKAS NUCD-UMDP",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Armando Macalinao Marcelo",
+              "party": "LAKAS NUCD-UMDP",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Pablo L. Marquez",
+              "party": "LAKAS NUCD-UMDP",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Jose Francisco C. Rivera",
+              "party": "LAKAS NUCD-UMDP",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Benjamin P. San Diego",
+              "party": "LAKAS NUCD-UMDP",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Lorie Vinta Surio",
+              "party": "LAKAS NUCD-UMDP",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Francisco R. Tan",
+              "party": "LAKAS NUCD-UMDP",
+              "votes": null,
+              "won": true
+            },
+            {
+              "name": "Leonilo Ignacio Yap",
+              "party": "LAKAS NUCD-UMDP",
+              "votes": null,
+              "won": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

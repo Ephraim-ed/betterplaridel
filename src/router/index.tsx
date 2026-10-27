@@ -2,8 +2,10 @@ import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { rootRoute } from "./root";
 import { homeRoute } from "./routes/home";
 import { aboutRoute } from "./routes/about";
+import { servicesRoute } from "./routes/services";
+import { announcementsRoute } from "./routes/announcements";
 import { hotlinesRoute, contactRedirectRoute } from "./routes/hotlines";
-import { officialsRoute } from "./routes/officials";
+import { governmentTree, officialsRedirectRoute } from "./routes/government";
 import { privacyRoute, termsRoute } from "./routes/legal";
 import {
   competitivenessRoute,
@@ -16,13 +18,16 @@ import { NotFound } from "./not-found";
 
 const routeTree = rootRoute.addChildren([
   homeRoute,
+  servicesRoute,
+  announcementsRoute,
   aboutRoute,
   hotlinesRoute,
-  officialsRoute,
+  governmentTree,
   statisticsRoute.addChildren([statisticsIndexRoute, demographicsRoute, competitivenessRoute, incomeRoute]),
   termsRoute,
   privacyRoute,
   contactRedirectRoute,
+  officialsRedirectRoute,
 ]);
 
 export const router = createRouter({
