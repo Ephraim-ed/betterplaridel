@@ -21,6 +21,7 @@ export const site = {
   town: "Plaridel, Bulacan",
   demonym: "Plaridelenyo",
   tagline: "Serbisyo at impormasyon para sa bawat Plaridelenyo",
+  portalLabel: "Community Portal for the Municipality of Plaridel", // left side of the top bar
   description:
     "A community guide to services, hotlines and announcements for the people of Plaridel, Bulacan.",
   email: "hello@example.com", // TODO: replace with your contact email

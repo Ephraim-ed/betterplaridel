@@ -1,6 +1,8 @@
 import { Fragment, useEffect, useRef, useState, type MouseEvent } from "react";
 import { getRouteApi } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { EmptyState } from "@/components/shared/empty-state";
 import { PageHeader } from "@/components/shared/page-header";
 import { chipClass } from "@/components/shared/chip";
 import { MunicipalDirectory } from "@/features/directory/components/municipal-directory";
@@ -87,7 +89,18 @@ export function HotlinesPage() {
         </div>
 
         {groups.length === 0 && !showDirectory && (
-          <p className="mt-12 text-center text-muted-foreground">No hotlines match &ldquo;{query}&rdquo;.</p>
+          <EmptyState
+            art="no-results"
+            title={<>No results for &ldquo;{query.trim()}&rdquo;</>}
+            className="mt-12"
+            actions={
+              <Button variant="outline" className="rounded-full" onClick={() => setQuery("")}>
+                Clear search
+              </Button>
+            }
+          >
+            Check the spelling, or try the name of an office, barangay or agency.
+          </EmptyState>
         )}
 
         {groups[0]?.id !== "emergency" && directory}
