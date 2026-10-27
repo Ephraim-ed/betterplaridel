@@ -9,6 +9,13 @@ export const statisticsModules = [
   { label: "Income", to: "/statistics/income", description: "Annual regular income and where it comes from" },
 ] as const;
 
+// The Government pages, listed in the navbar dropdown.
+export const governmentPages = [
+  { label: "Officials", to: "/government/officials", description: "Mayor, Vice Mayor, councilors and election results" },
+  { label: "Municipal Departments", to: "/government/departments", description: "Department heads and key offices" },
+  { label: "Barangays", to: "/government/barangays", description: "The 19 barangays and their captains" },
+] as const;
+
 export const site = {
   name: "BetterPlaridel",
   town: "Plaridel, Bulacan",
@@ -21,11 +28,12 @@ export const site = {
     "BetterPlaridel is a community project and is not the official website of the Municipality of Plaridel.",
 
   nav: [
-    { label: "Services", to: "/", hash: "services" },
+    { label: "Home", to: "/" },
+    { label: "Services", to: "/services" },
     { label: "Hotlines", to: "/hotlines" },
-    { label: "Officials", to: "/officials" },
+    { label: "Government", to: "/government", children: governmentPages },
     { label: "Statistics", to: "/statistics", children: statisticsModules },
-    { label: "Announcements", to: "/", hash: "announcements" },
+    { label: "Announcements", to: "/announcements" },
     { label: "About", to: "/about" },
   ],
 
@@ -40,7 +48,7 @@ export const site = {
   footer: {
     quickLinks: [
       { label: "Hotlines", to: "/hotlines" },
-      { label: "Officials", to: "/officials" },
+      { label: "Officials", to: "/government/officials" },
       { label: "Statistics", to: "/statistics" },
       { label: "About", to: "/about" },
       { label: "FAQ", to: "/", hash: "faq" },

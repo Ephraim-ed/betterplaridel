@@ -1,14 +1,18 @@
 import { useState, useSyncExternalStore } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import {
+  Building2Icon,
   ChartColumnIcon,
   ChevronDownIcon,
+  HomeIcon,
+  MapPinIcon,
   InfoIcon,
   LandmarkIcon,
   LayoutGridIcon,
   MegaphoneIcon,
   PhoneIcon,
   TrendingUpIcon,
+  UserRoundIcon,
   UsersIcon,
   WalletIcon,
   type LucideIcon,
@@ -24,11 +28,15 @@ import { site } from "@/site.config";
 type NavItem = (typeof site.nav)[number];
 type SubItem = { label: string; to: string; description: string };
 
-// Shown in the mobile menu and the Statistics dropdown.
+// Shown in the mobile menu and the Government and Statistics dropdowns.
 const icons: Record<string, LucideIcon> = {
+  Home: HomeIcon,
   Services: LayoutGridIcon,
   Hotlines: PhoneIcon,
-  Officials: LandmarkIcon,
+  Government: LandmarkIcon,
+  Officials: UserRoundIcon,
+  "Municipal Departments": Building2Icon,
+  Barangays: MapPinIcon,
   Statistics: ChartColumnIcon,
   Announcements: MegaphoneIcon,
   About: InfoIcon,
@@ -40,7 +48,7 @@ const icons: Record<string, LucideIcon> = {
 function linkTo(item: NavItem) {
   return {
     to: item.to,
-    hash: "hash" in item ? item.hash : undefined,
+    hash: "hash" in item ? (item.hash as string) : undefined,
     // Home-page sections need an exact match; other links stay active on their sub-pages.
     activeOptions: { exact: item.to === "/", includeHash: true },
   };

@@ -1,4 +1,7 @@
-import { TERM, type OrgNode } from "../data";
+import { AnimateIcon } from "@animate-ui/react/icons";
+import { cn } from "cn";
+import { TERM, type OrgNode } from "../official-data";
+import { ContactIcon } from "./contact-icon";
 
 const groupTitle = (label = "members") => label[0].toUpperCase() + label.slice(1);
 
@@ -8,21 +11,27 @@ export function OfficialDetails({
   members,
   onSelect,
   onClose,
+  className = "",
 }: {
   official: OrgNode;
   parent?: OrgNode;
   members: OrgNode[];
   onSelect: (id: string) => void;
   onClose: () => void;
+  className?: string;
 }) {
   const rows: [string, string][] = [];
   if (["executive", "legislative", "member"].includes(official.kind)) rows.push(["Term", TERM]);
-  if (official.contact) rows.push(["Contact", official.contact]);
+  if (official.elected) {
+    const { year, party, votes } = official.elected;
+    if (party) rows.push(["Party", party]);
+    if (votes != null) rows.push([`Votes (${year})`, votes.toLocaleString("en-PH")]);
+  }
 
   return (
     <aside
       aria-label={`Details: ${official.name}`}
-      className="rounded-2xl border border-line bg-background p-5"
+      className={cn("rounded-2xl border border-line bg-background p-5", className)}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
@@ -50,6 +59,30 @@ export function OfficialDetails({
             </div>
           ))}
         </dl>
+      )}
+
+      {/* Same look as the hotline cards: icon + value, the icon animates on hover. */}
+      {official.contacts && (
+        <ul className="mt-4 grid gap-2 border-t border-line pt-4 text-sm">
+          {official.contacts.map((c) => (
+            <li key={c.label}>
+              <AnimateIcon animateOnHover asChild>
+                <a
+                  href={c.href}
+                  {...(c.href.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
+                  aria-label={`${c.label}: ${c.value}`}
+                  title={c.label}
+                  className="group flex items-center gap-3 rounded-xl bg-brand/10 px-3 py-2 text-foreground transition-colors hover:bg-brand/15"
+                >
+                  <span className="grid size-8 shrink-0 place-items-center rounded-full bg-background text-brand">
+                    <ContactIcon label={c.label} />
+                  </span>
+                  <span className="min-w-0 font-medium break-all">{c.value}</span>
+                </a>
+              </AnimateIcon>
+            </li>
+          ))}
+        </ul>
       )}
 
       {official.rosters?.map((r) => (
