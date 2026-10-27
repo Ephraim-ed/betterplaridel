@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Dialog } from "radix-ui";
 import { CircleHelpIcon, XIcon } from "lucide-react";
 import { cn } from "cn";
+import { WelcomeContext } from "@/components/layout/welcome-screen";
 import { Button } from "@/components/ui/button";
 import { tourGraphics, type TourGraphic } from "./tour-graphics";
 
@@ -15,8 +16,11 @@ export function StatisticsTour({ id, steps }: { id: string; steps: readonly Tour
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
-  // Opens a moment after the page appears, only for visitors who haven't seen it in this browser.
+  // Opens a moment after the page appears (and the welcome screen is gone), only for visitors who haven't seen it
+  // in this browser.
+  const welcomeShowing = useContext(WelcomeContext);
   useEffect(() => {
+    if (welcomeShowing) return;
     const timer = setTimeout(() => {
       try {
         if (!localStorage.getItem(storageKey(id))) setOpen(true);
@@ -25,7 +29,7 @@ export function StatisticsTour({ id, steps }: { id: string; steps: readonly Tour
       }
     }, 400);
     return () => clearTimeout(timer);
-  }, [id]);
+  }, [id, welcomeShowing]);
 
   function change(next: boolean) {
     setOpen(next);

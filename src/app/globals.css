@@ -10,20 +10,23 @@
   --surface: #f8fafc;
   --line: var(--border);
   --brand: #047857;
+  --brand-deep: #0f4d2e;
+  --brand-yellow: #f2c318; /* The yellow from the logo. */
   --background: oklch(1 0 0);
-  --foreground: #0f172a;
+  /* Soft slate, not near-black, for all text. */
+  --foreground: #334155;
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: var(--foreground);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
+  --popover-foreground: var(--foreground);
   --primary: var(--brand);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  --secondary-foreground: var(--foreground);
   --muted: oklch(0.97 0 0);
   --muted-foreground: #64748b;
   --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent-foreground: var(--foreground);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
@@ -51,6 +54,8 @@
   --color-muted: var(--muted);
   --color-line: var(--line);
   --color-brand: var(--brand);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-yellow: var(--brand-yellow);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-geist-sans);
@@ -93,7 +98,9 @@
 
 html {
   color-scheme: light;
-  scroll-behavior: smooth;
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
 }
 
 @utility container-page {

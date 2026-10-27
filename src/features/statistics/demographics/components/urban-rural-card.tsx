@@ -20,7 +20,7 @@ function ShareBar({ label, values }: { label: string; values: Record<"urban" | "
             style={{
               width: `${(values[k] / total) * 100}%`,
               backgroundColor: kinds[k].color,
-              color: k === "urban" ? "#ffffff" : "#0f172a",
+              color: k === "urban" ? "#ffffff" : "var(--foreground)",
             }}
           >
             {fmt.percent(values[k] / total)}

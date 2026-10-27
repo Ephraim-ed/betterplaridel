@@ -12,5 +12,7 @@ export const chartColors = {
 export const densityRamp = ["#60c599", "#29a979", "#0a8b61", "#096d4c", "#095238"] as const;
 export const densityBreaks = [2000, 4000, 6000, 8000] as const;
 export const densityClass = (perKm2: number) => densityBreaks.filter((b) => perKm2 >= b).length;
+// Dark text for the map: softer than black, but darker than the site's text so it stays readable on the greens.
+export const mapInk = "#1e293b";
 // The two lightest shades need dark text; the rest take white.
-export const densityInk = (cls: number) => (cls < 2 ? "#0f172a" : "#ffffff");
+export const densityInk = (cls: number) => (cls < 2 ? mapInk : "#ffffff");
