@@ -22,7 +22,7 @@ export function MunicipalDirectory({ id, query }: { id?: string; query: string }
   const count = `${matches.length} ${matches.length === 1 ? "office" : "offices"}`;
 
   return (
-    <div id={id} className="mt-10 scroll-mt-48">
+    <div id={id} className="mt-10 scroll-mt-44">
       <h2 className="text-2xl font-bold tracking-tight">Municipal Hall</h2>
       <p className="mt-1 text-muted-foreground">Every office in the Municipal Hall, through one trunkline.</p>
 
