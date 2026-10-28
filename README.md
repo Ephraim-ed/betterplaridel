@@ -20,6 +20,12 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Pull request checks and automation
+
+Every pull request is linted, type-checked and built by GitHub Actions, and Dependabot opens weekly package
+updates. Run the same checks locally with `npm run lint`, `npm run typecheck` and `npm run build`.
+See [docs/github-automation.md](docs/github-automation.md) for what runs, when, and how to fix a failure.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
