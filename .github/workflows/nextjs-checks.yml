@@ -1,0 +1,54 @@
+name: Next.js checks
+
+# Lint, type-check and build every pull request before it can be merged.
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+
+# Read-only: this workflow never writes to the repo and uses no secrets,
+# so it is safe to run on pull requests from forks.
+permissions:
+  contents: read
+
+# A newer push to the same PR cancels the run that is still going.
+concurrency:
+  group: nextjs-checks-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Lint, type-check and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          # Next 16 needs Node >= 20.9; 24 is the current LTS.
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type-check
+        # Generates Next's route types (LayoutProps, PageProps) first, then runs tsc.
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1

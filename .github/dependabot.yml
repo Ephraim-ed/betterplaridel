@@ -1,0 +1,17 @@
+
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+    # One PR for all minor and patch bumps; major updates (e.g. Next 16 → 17) still come one per PR.
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
