@@ -1,56 +1,219 @@
 {
-  "source": {
-    "label": "BetterPlaridel editors",
-    "notes": "The first six are the most requested; the home page lists them as \"Popular services\"."
-  },
+  "sources": [
+    {
+      "label": "BetterPlaridel editors",
+      "notes": "The first six services are the most requested; the home page lists them as \"Popular services\". The locations are a template: office names follow directory.json, and each office, its building, photo and description must be verified before launch. Locations with \"sample\": true are dummy entries for testing the layout (Jobs (PESO)); delete them before launch."
+    },
+    {
+      "label": "OpenStreetMap (Nominatim)",
+      "url": "https://www.openstreetmap.org/",
+      "retrieved": "2026-10-28",
+      "notes": "Coordinates and streets of the places below. © OpenStreetMap contributors, ODbL. Municipal Hall: way 300726854; Rural Health Unit: node 12347822083; Bulihan Health Center: node 8555624553."
+    }
+  ],
+  "places": [
+    {
+      "id": "municipal-hall",
+      "name": "Plaridel Municipal Hall",
+      "address": "Padilla Street, Plaridel, Bulacan",
+      "coordinates": {
+        "lat": 14.8868791,
+        "lng": 120.8599798
+      }
+    },
+    {
+      "id": "rural-health-unit",
+      "name": "Rural Health Unit",
+      "address": "Santa Veronica Street, Plaridel, Bulacan",
+      "coordinates": {
+        "lat": 14.870035,
+        "lng": 120.8571778
+      }
+    },
+    {
+      "id": "bulihan-health-center",
+      "name": "Bulihan Health Center",
+      "address": "Bulihan Road, Bulihan, Plaridel, Bulacan",
+      "coordinates": {
+        "lat": 14.8786911,
+        "lng": 120.9003885
+      }
+    }
+  ],
   "services": [
     {
       "id": "civil-registry",
       "title": "Civil Registry",
       "body": "Birth, marriage and death certificates, and late registration.",
-      "icon": "file-text"
+      "icon": "file-text",
+      "locations": [
+        {
+          "name": "Local Civil Registrar",
+          "description": "Registers births, marriages and deaths, and issues certified copies and late registrations.",
+          "place": "municipal-hall"
+        }
+      ]
     },
     {
       "id": "business-permits",
       "title": "Business Permits",
       "body": "New and renewal business permits, and requirements checklist.",
-      "icon": "shopping-bag"
+      "icon": "shopping-bag",
+      "locations": [
+        {
+          "name": "Office of the Mayor — Business Permit",
+          "description": "Processes new and renewal business permits, and gives out the requirements checklist.",
+          "place": "municipal-hall"
+        }
+      ]
     },
     {
       "id": "cedula",
       "title": "Cedula",
       "body": "Community Tax Certificate for employment, permits and transactions.",
-      "icon": "badge-check"
+      "icon": "badge-check",
+      "locations": [
+        {
+          "name": "Treasurer's Office",
+          "description": "Issues the Community Tax Certificate (cedula) for individuals and businesses.",
+          "place": "municipal-hall"
+        }
+      ]
     },
     {
       "id": "real-property-tax",
       "title": "Real Property Tax",
       "body": "Amilyar payment schedule, discounts and tax declarations.",
-      "icon": "house"
+      "icon": "house",
+      "locations": [
+        {
+          "name": "Treasurer's Office",
+          "description": "Accepts real property tax (amilyar) payments.",
+          "place": "municipal-hall"
+        },
+        {
+          "name": "Assessor's Office",
+          "description": "Issues tax declarations and keeps the town's property assessment records.",
+          "place": "municipal-hall"
+        }
+      ]
     },
     {
       "id": "health-services",
       "title": "Health Services",
       "body": "Rural Health Unit, vaccinations, check-ups and health programs.",
-      "icon": "heart"
+      "icon": "heart",
+      "locations": [
+        {
+          "name": "Rural Health Unit",
+          "description": "Check-ups, vaccinations, maternal care and the town's health programs.",
+          "place": "rural-health-unit"
+        },
+        {
+          "name": "Bulihan Health Center",
+          "description": "Barangay health station for residents of Bulihan.",
+          "place": "bulihan-health-center"
+        }
+      ]
     },
     {
       "id": "social-welfare",
       "title": "Social Welfare",
       "body": "MSWDO assistance, senior citizen, PWD and solo parent IDs.",
-      "icon": "users"
+      "icon": "users",
+      "locations": [
+        {
+          "name": "Municipal Social Welfare Office",
+          "description": "Financial and crisis assistance, and PWD and solo parent IDs.",
+          "place": "municipal-hall"
+        },
+        {
+          "name": "Senior Citizens Office",
+          "description": "Senior citizen IDs and benefits.",
+          "place": "municipal-hall"
+        }
+      ]
     },
     {
       "id": "jobs-peso",
       "title": "Jobs (PESO)",
       "body": "Job fairs, local hiring and employment assistance.",
-      "icon": "search"
+      "icon": "search",
+      "locations": [
+        {
+          "name": "PESO Help Desk",
+          "description": "Job referrals, resume help and employment assistance.",
+          "place": "municipal-hall",
+          "sample": true
+        },
+        {
+          "name": "Job Fair Booth A",
+          "description": "Walk-in interviews for production and warehouse work.",
+          "place": "municipal-hall",
+          "sample": true
+        },
+        {
+          "name": "Job Fair Booth B",
+          "description": "Openings for sales, cashier and service crew jobs.",
+          "place": "municipal-hall",
+          "sample": true
+        },
+        {
+          "name": "SPES Desk",
+          "description": "Summer jobs for students during school breaks.",
+          "place": "municipal-hall",
+          "sample": true
+        },
+        {
+          "name": "TUPAD Desk",
+          "description": "Short-term emergency work for displaced and underemployed workers.",
+          "place": "municipal-hall",
+          "sample": true
+        },
+        {
+          "name": "OFW Help Desk",
+          "description": "Guidance for overseas job applicants and returning workers.",
+          "place": "municipal-hall",
+          "sample": true
+        },
+        {
+          "name": "Skills Training Desk",
+          "description": "Sign-ups for short skills courses and certifications.",
+          "place": "municipal-hall",
+          "sample": true
+        },
+        {
+          "name": "Career Coaching Desk",
+          "description": "Mock interviews and career guidance for first-time job seekers.",
+          "place": "municipal-hall",
+          "sample": true
+        },
+        {
+          "name": "Health Worker Hiring",
+          "description": "Openings for barangay health workers and midwives.",
+          "place": "rural-health-unit",
+          "sample": true
+        },
+        {
+          "name": "Livelihood Desk",
+          "description": "Starter kits and livelihood seminars for residents.",
+          "place": "bulihan-health-center",
+          "sample": true
+        },
+        {
+          "name": "Barangay Jobs Board",
+          "description": "Local openings posted by businesses in Bulihan.",
+          "place": "bulihan-health-center",
+          "sample": true
+        }
+      ]
     },
     {
       "id": "barangay-directory",
       "title": "Barangay Directory",
       "body": "Find your barangay hall, officials and contact details.",
-      "icon": "map-pin"
+      "icon": "map-pin",
+      "locations": []
     }
   ]
 }
